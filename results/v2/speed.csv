@@ -1,0 +1,6 @@
+model,ms_per_sentence
+Exact match (baseline),0.005020325000032244
+Fuzzy match (baseline),0.035299350499769844
+Logistic regression,1.0424765079994813
+Random forest,53.14333279749985
+spaCy NER,1.2393776794995688

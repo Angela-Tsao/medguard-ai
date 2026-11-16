@@ -1,0 +1,66 @@
+model,test_set,input_type,n_sentences,n_mentions,precision,recall,recall_lo,recall_hi,f1,normalized_recall,norm_recall_lo,norm_recall_hi
+Exact match (baseline),Synthetic test (unseen drugs + templates),clean,200,374,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Exact match (baseline),Synthetic test (unseen drugs + templates),ALL,1000,1993,1.0,0.6066231811339688,0.571777609653372,0.6403766104090617,0.7551530293566521,0.6066231811339688,0.571777609653372,0.6403766104090617
+Exact match (baseline),Synthetic test (unseen drugs + templates),brand,200,424,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Exact match (baseline),Synthetic test (unseen drugs + templates),misspelled,200,403,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Exact match (baseline),Synthetic test (unseen drugs + templates),ocr_noise,200,391,1.0,0.02557544757033248,0.01107654814343884,0.04197530864197531,0.04987531172069826,0.02557544757033248,0.01107654814343884,0.04197530864197531
+Exact match (baseline),Synthetic test (unseen drugs + templates),dose_attached,200,401,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Exact match (baseline),Hand-written holdout,clean,10,19,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Exact match (baseline),Hand-written holdout,ALL,50,69,1.0,0.5797101449275363,0.4218353713768116,0.7288471885929512,0.7339449541284404,0.5797101449275363,0.4218353713768116,0.7288471885929512
+Exact match (baseline),Hand-written holdout,misspelled,10,21,1.0,0.09523809523809523,0.0,0.23809523809523808,0.17391304347826084,0.09523809523809523,0.0,0.23809523809523808
+Exact match (baseline),Hand-written holdout,ocr_noise,10,10,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Exact match (baseline),Hand-written holdout,dose_attached,10,15,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Exact match (baseline),Hand-written holdout,colloquial,5,3,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Exact match (baseline),Hand-written holdout,negatives,5,1,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Fuzzy match (baseline),Synthetic test (unseen drugs + templates),clean,200,374,0.8947368421052632,1.0,1.0,1.0,0.9444444444444444,1.0,1.0,1.0
+Fuzzy match (baseline),Synthetic test (unseen drugs + templates),ALL,1000,1993,0.9236854350860866,0.9959859508278976,0.9931360693339527,0.9985023212565307,0.9584741670690488,0.9954841946813848,0.992511139634205,0.9984570268120881
+Fuzzy match (baseline),Synthetic test (unseen drugs + templates),brand,200,424,0.9197396963123644,1.0,1.0,1.0,0.9581920903954801,1.0,1.0,1.0
+Fuzzy match (baseline),Synthetic test (unseen drugs + templates),misspelled,200,403,0.9193548387096774,0.9900744416873449,0.9794858611825192,0.9975905062557925,0.953405017921147,0.9875930521091811,0.9767426798409446,0.9974163528028537
+Fuzzy match (baseline),Synthetic test (unseen drugs + templates),ocr_noise,200,391,0.937046004842615,0.989769820971867,0.9793268265252842,0.9975310162379128,0.9626865671641791,0.989769820971867,0.9793268265252842,0.9975310162379128
+Fuzzy match (baseline),Synthetic test (unseen drugs + templates),dose_attached,200,401,0.9479905437352246,1.0,1.0,1.0,0.9733009708737864,1.0,1.0,1.0
+Fuzzy match (baseline),Hand-written holdout,clean,10,19,0.8636363636363636,1.0,1.0,1.0,0.9268292682926829,1.0,1.0,1.0
+Fuzzy match (baseline),Hand-written holdout,ALL,50,69,0.8734177215189873,1.0,1.0,1.0,0.9324324324324325,1.0,1.0,1.0
+Fuzzy match (baseline),Hand-written holdout,misspelled,10,21,0.9545454545454546,1.0,1.0,1.0,0.9767441860465117,1.0,1.0,1.0
+Fuzzy match (baseline),Hand-written holdout,ocr_noise,10,10,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Fuzzy match (baseline),Hand-written holdout,dose_attached,10,15,0.9375,1.0,1.0,1.0,0.967741935483871,1.0,1.0,1.0
+Fuzzy match (baseline),Hand-written holdout,colloquial,5,3,0.6,1.0,1.0,1.0,0.7499999999999999,1.0,1.0,1.0
+Fuzzy match (baseline),Hand-written holdout,negatives,5,1,0.25,1.0,1.0,1.0,0.4,1.0,1.0,1.0
+Logistic regression,Synthetic test (unseen drugs + templates),clean,200,374,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Logistic regression,Synthetic test (unseen drugs + templates),ALL,1000,1993,1.0,1.0,1.0,1.0,1.0,0.9984947315604616,0.9969011381882024,1.0
+Logistic regression,Synthetic test (unseen drugs + templates),brand,200,424,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Logistic regression,Synthetic test (unseen drugs + templates),misspelled,200,403,1.0,1.0,1.0,1.0,1.0,0.9950372208436724,0.9874670934262608,1.0
+Logistic regression,Synthetic test (unseen drugs + templates),ocr_noise,200,391,1.0,1.0,1.0,1.0,1.0,0.9974424552429667,0.9918913425620742,1.0
+Logistic regression,Synthetic test (unseen drugs + templates),dose_attached,200,401,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Logistic regression,Hand-written holdout,clean,10,19,0.8260869565217391,1.0,1.0,1.0,0.9047619047619047,1.0,1.0,1.0
+Logistic regression,Hand-written holdout,ALL,50,69,0.7419354838709677,1.0,1.0,1.0,0.8518518518518519,1.0,1.0,1.0
+Logistic regression,Hand-written holdout,misspelled,10,21,0.875,1.0,1.0,1.0,0.9333333333333333,1.0,1.0,1.0
+Logistic regression,Hand-written holdout,ocr_noise,10,10,0.43478260869565216,1.0,1.0,1.0,0.6060606060606061,1.0,1.0,1.0
+Logistic regression,Hand-written holdout,dose_attached,10,15,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Logistic regression,Hand-written holdout,colloquial,5,3,0.75,1.0,1.0,1.0,0.8571428571428571,1.0,1.0,1.0
+Logistic regression,Hand-written holdout,negatives,5,1,0.25,1.0,1.0,1.0,0.4,1.0,1.0,1.0
+Random forest,Synthetic test (unseen drugs + templates),clean,200,374,0.9894179894179894,1.0,1.0,1.0,0.9946808510638299,1.0,1.0,1.0
+Random forest,Synthetic test (unseen drugs + templates),ALL,1000,1993,0.9910403185664509,0.9989964877069744,0.9974631844486166,1.0,0.9950024987506246,0.9979929754139488,0.9955708116226055,0.9995064165844028
+Random forest,Synthetic test (unseen drugs + templates),brand,200,424,0.9906542056074766,1.0,1.0,1.0,0.9953051643192489,1.0,1.0,1.0
+Random forest,Synthetic test (unseen drugs + templates),misspelled,200,403,0.9852579852579852,0.9950372208436724,0.9871778350515464,1.0,0.9901234567901234,0.9925558312655087,0.9826721924673857,1.0
+Random forest,Synthetic test (unseen drugs + templates),ocr_noise,200,391,0.9949109414758269,1.0,1.0,1.0,0.9974489795918366,0.9974424552429667,0.9921254662246167,1.0
+Random forest,Synthetic test (unseen drugs + templates),dose_attached,200,401,0.9950372208436724,1.0,1.0,1.0,0.9975124378109452,1.0,1.0,1.0
+Random forest,Hand-written holdout,clean,10,19,0.9047619047619048,1.0,1.0,1.0,0.9500000000000001,1.0,1.0,1.0
+Random forest,Hand-written holdout,ALL,50,69,0.6699029126213593,1.0,1.0,1.0,0.8023255813953488,1.0,1.0,1.0
+Random forest,Hand-written holdout,misspelled,10,21,0.9130434782608695,1.0,1.0,1.0,0.9545454545454545,1.0,1.0,1.0
+Random forest,Hand-written holdout,ocr_noise,10,10,0.2631578947368421,1.0,1.0,1.0,0.4166666666666667,1.0,1.0,1.0
+Random forest,Hand-written holdout,dose_attached,10,15,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Random forest,Hand-written holdout,colloquial,5,3,0.75,1.0,1.0,1.0,0.8571428571428571,1.0,1.0,1.0
+Random forest,Hand-written holdout,negatives,5,1,0.5,1.0,1.0,1.0,0.6666666666666666,1.0,1.0,1.0
+spaCy NER,Synthetic test (unseen drugs + templates),clean,200,374,0.6952141057934509,0.7379679144385026,0.6970448776453141,0.7771809814023624,0.7159533073929962,0.7379679144385026,0.6970448776453141,0.7771809814023624
+spaCy NER,Synthetic test (unseen drugs + templates),ALL,1000,1993,0.688953488372093,0.7134972403411942,0.6934124037685296,0.7335042970012196,0.7010105989647523,0.7129954841946814,0.692910895310657,0.7334670109054603
+spaCy NER,Synthetic test (unseen drugs + templates),brand,200,424,0.6748768472906403,0.6462264150943396,0.6057890515389068,0.6882864311241361,0.6602409638554217,0.6462264150943396,0.6057890515389068,0.6882864311241361
+spaCy NER,Synthetic test (unseen drugs + templates),misspelled,200,403,0.6616915422885572,0.6600496277915633,0.6161272910819217,0.7026350589950947,0.6608695652173913,0.6575682382133995,0.6138077714342887,0.7012995670995671
+spaCy NER,Synthetic test (unseen drugs + templates),ocr_noise,200,391,0.6576354679802956,0.6828644501278772,0.6449981884057971,0.7277682150189239,0.6700125470514429,0.6828644501278772,0.6449981884057971,0.7277682150189239
+spaCy NER,Synthetic test (unseen drugs + templates),dose_attached,200,401,0.7483443708609272,0.8453865336658354,0.8138344153857281,0.876679895402739,0.7939110070257611,0.8453865336658354,0.8138344153857281,0.876679895402739
+spaCy NER,Hand-written holdout,clean,10,19,0.64,0.8421052631578947,0.66625,1.0,0.7272727272727272,0.8421052631578947,0.66625,1.0
+spaCy NER,Hand-written holdout,ALL,50,69,0.5446428571428571,0.8840579710144928,0.7972972972972973,0.9531774720149253,0.6740331491712707,0.8840579710144928,0.7972972972972973,0.9531774720149253
+spaCy NER,Hand-written holdout,misspelled,10,21,0.8,0.9523809523809523,0.85,1.0,0.8695652173913043,0.9523809523809523,0.85,1.0
+spaCy NER,Hand-written holdout,ocr_noise,10,10,0.32,0.8,0.5,1.0,0.45714285714285713,0.8,0.5,1.0
+spaCy NER,Hand-written holdout,dose_attached,10,15,0.7777777777777778,0.9333333333333333,0.8,1.0,0.8484848484848485,0.9333333333333333,0.8,1.0
+spaCy NER,Hand-written holdout,colloquial,5,3,0.25,0.6666666666666666,0.0,1.0,0.36363636363636365,0.6666666666666666,0.0,1.0
+spaCy NER,Hand-written holdout,negatives,5,1,0.09090909090909091,1.0,1.0,1.0,0.16666666666666669,1.0,1.0,1.0

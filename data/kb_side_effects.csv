@@ -1,0 +1,34 @@
+canonical,geriatric_flags,source,verified
+lisinopril,dizziness;high potassium,FDA label (openFDA adverse_reactions),YES
+losartan,dizziness;high potassium,FDA label (openFDA adverse_reactions),YES
+amlodipine,dizziness;ankle swelling,FDA label (openFDA adverse_reactions),YES
+metoprolol,dizziness;slow heart rate,FDA label (openFDA adverse_reactions),YES
+furosemide,dizziness;dehydration;low potassium,FDA label (openFDA adverse_reactions),YES
+spironolactone,high potassium;dizziness,FDA label (openFDA adverse_reactions),YES
+warfarin,bleeding,FDA label (openFDA adverse_reactions),YES
+rivaroxaban,bleeding,FDA label (openFDA adverse_reactions),YES
+apixaban,bleeding,FDA label (openFDA adverse_reactions),YES
+clopidogrel,bleeding,FDA label (openFDA adverse_reactions),YES
+aspirin,bleeding;stomach upset,FDA label (openFDA adverse_reactions),YES
+ibuprofen,stomach bleeding;kidney problems,FDA label (openFDA adverse_reactions),YES
+naproxen,stomach bleeding;kidney problems,FDA label (openFDA adverse_reactions),YES
+glipizide,low blood sugar,FDA label (openFDA adverse_reactions),YES
+metformin,stomach upset,FDA label (openFDA adverse_reactions),YES
+diphenhydramine,drowsiness;confusion,FDA label (openFDA adverse_reactions),YES
+hydroxyzine,drowsiness;confusion,FDA label (openFDA adverse_reactions),YES
+meclizine,drowsiness,FDA label (openFDA adverse_reactions),YES
+amitriptyline,drowsiness;dizziness;confusion,FDA label (openFDA adverse_reactions),YES
+lorazepam,drowsiness;dizziness;falls,FDA label (openFDA adverse_reactions),YES
+alprazolam,drowsiness;dizziness;falls,FDA label (openFDA adverse_reactions),YES
+diazepam,drowsiness;dizziness;falls,FDA label (openFDA adverse_reactions),YES
+zolpidem,drowsiness;dizziness;confusion,FDA label (openFDA adverse_reactions),YES
+gabapentin,drowsiness;dizziness,FDA label (openFDA adverse_reactions),YES
+cyclobenzaprine,drowsiness;dizziness,FDA label (openFDA adverse_reactions),YES
+oxycodone,drowsiness;dizziness;constipation,FDA label (openFDA adverse_reactions),YES
+tramadol,dizziness;drowsiness;constipation,FDA label (openFDA adverse_reactions),YES
+oxybutynin,dry mouth;confusion;constipation,FDA label (openFDA adverse_reactions),YES
+sertraline,dizziness;low sodium,FDA label (openFDA adverse_reactions),YES
+trazodone,drowsiness;dizziness,FDA label (openFDA adverse_reactions),YES
+tamsulosin,dizziness when standing,FDA label (openFDA adverse_reactions),YES
+donepezil,slow heart rate;fainting,FDA label (openFDA adverse_reactions),YES
+digoxin,nausea;confusion,FDA label (openFDA adverse_reactions),YES

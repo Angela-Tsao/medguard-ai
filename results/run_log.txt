@@ -1,0 +1,50 @@
+featurizing ...
+training spaCy NER ...
+spaCy losses: [4318, 36, 30, 18, 10, 3, 13, 10, 2, 2, 10, 5]
+fuzzy: threshold=0.727 val_recall=0.991 val_precision=0.953
+logreg: threshold=0.489 val_recall=0.997 val_precision=0.999
+logreg_ctx: threshold=0.379 val_recall=0.994 val_precision=0.999
+rforest: threshold=0.588 val_recall=0.995 val_precision=0.992
+gboost: threshold=0.272 val_recall=0.996 val_precision=0.973
+model                                                    Exact match (baseline)  ...  spaCy NER
+test_set                                  input_type                             ...           
+Hand-written holdout                      ALL                             0.580  ...      0.841
+                                          clean                           1.000  ...      0.737
+                                          colloquial                      1.000  ...      0.667
+                                          dose_attached                   1.000  ...      0.800
+                                          misspelled                      0.095  ...      0.952
+                                          negatives                       1.000  ...      1.000
+                                          ocr_noise                       0.000  ...      0.900
+Synthetic test (unseen drugs + templates) ALL                             0.606  ...      0.818
+                                          brand                           1.000  ...      0.745
+                                          clean                           1.000  ...      0.840
+                                          dose_attached                   1.000  ...      0.897
+                                          misspelled                      0.000  ...      0.784
+                                          ocr_noise                       0.016  ...      0.820
+
+[13 rows x 7 columns]
+                            model  ... normalized_recall
+1          Exact match (baseline)  ...             0.606
+7          Exact match (baseline)  ...             0.580
+14         Fuzzy match (baseline)  ...             0.995
+20         Fuzzy match (baseline)  ...             1.000
+27            Logistic regression  ...             0.996
+33            Logistic regression  ...             1.000
+40  Logistic regression + context  ...             0.986
+46  Logistic regression + context  ...             0.986
+53                  Random forest  ...             0.995
+59                  Random forest  ...             0.986
+66              Gradient boosting  ...             0.998
+72              Gradient boosting  ...             1.000
+79                      spaCy NER  ...             0.817
+85                      spaCy NER  ...             0.841
+
+[14 rows x 8 columns]
+                           model  ms_per_sentence
+0         Exact match (baseline)         0.006630
+1         Fuzzy match (baseline)         0.034697
+2            Logistic regression         0.839590
+3  Logistic regression + context         0.849759
+4                  Random forest        14.788181
+5              Gradient boosting         0.901439
+6                      spaCy NER         1.297018

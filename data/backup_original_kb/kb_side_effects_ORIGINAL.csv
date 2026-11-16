@@ -1,0 +1,34 @@
+canonical,geriatric_flags,source,verified
+lisinopril,dizziness;high potassium,FDA label (openFDA adverse_reactions),PENDING
+losartan,dizziness;high potassium,FDA label (openFDA adverse_reactions),PENDING
+amlodipine,dizziness;ankle swelling,FDA label (openFDA adverse_reactions),PENDING
+metoprolol,dizziness;slow heart rate,FDA label (openFDA adverse_reactions),PENDING
+furosemide,dizziness;dehydration;low potassium,FDA label (openFDA adverse_reactions),PENDING
+spironolactone,high potassium;dizziness,FDA label (openFDA adverse_reactions),PENDING
+warfarin,bleeding,FDA label (openFDA adverse_reactions),PENDING
+rivaroxaban,bleeding,FDA label (openFDA adverse_reactions),PENDING
+apixaban,bleeding,FDA label (openFDA adverse_reactions),PENDING
+clopidogrel,bleeding,FDA label (openFDA adverse_reactions),PENDING
+aspirin,bleeding;stomach upset,FDA label (openFDA adverse_reactions),PENDING
+ibuprofen,stomach bleeding;kidney problems,FDA label (openFDA adverse_reactions),PENDING
+naproxen,stomach bleeding;kidney problems,FDA label (openFDA adverse_reactions),PENDING
+glipizide,low blood sugar,FDA label (openFDA adverse_reactions),PENDING
+metformin,stomach upset,FDA label (openFDA adverse_reactions),PENDING
+diphenhydramine,drowsiness;confusion,FDA label (openFDA adverse_reactions),PENDING
+hydroxyzine,drowsiness;confusion,FDA label (openFDA adverse_reactions),PENDING
+meclizine,drowsiness,FDA label (openFDA adverse_reactions),PENDING
+amitriptyline,drowsiness;dizziness;confusion,FDA label (openFDA adverse_reactions),PENDING
+lorazepam,drowsiness;dizziness;falls,FDA label (openFDA adverse_reactions),PENDING
+alprazolam,drowsiness;dizziness;falls,FDA label (openFDA adverse_reactions),PENDING
+diazepam,drowsiness;dizziness;falls,FDA label (openFDA adverse_reactions),PENDING
+zolpidem,drowsiness;dizziness;confusion,FDA label (openFDA adverse_reactions),PENDING
+gabapentin,drowsiness;dizziness,FDA label (openFDA adverse_reactions),PENDING
+cyclobenzaprine,drowsiness;dizziness,FDA label (openFDA adverse_reactions),PENDING
+oxycodone,drowsiness;dizziness;constipation,FDA label (openFDA adverse_reactions),PENDING
+tramadol,dizziness;drowsiness;constipation,FDA label (openFDA adverse_reactions),PENDING
+oxybutynin,dry mouth;confusion;constipation,FDA label (openFDA adverse_reactions),PENDING
+sertraline,dizziness;low sodium,FDA label (openFDA adverse_reactions),PENDING
+trazodone,drowsiness;dizziness,FDA label (openFDA adverse_reactions),PENDING
+tamsulosin,dizziness when standing,FDA label (openFDA adverse_reactions),PENDING
+donepezil,slow heart rate;fainting,FDA label (openFDA adverse_reactions),PENDING
+digoxin,nausea;confusion,FDA label (openFDA adverse_reactions),PENDING

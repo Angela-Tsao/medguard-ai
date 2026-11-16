@@ -1,0 +1,157 @@
+model,type,token,input_type,sentence
+Exact match (baseline),missed,metforman,misspelled,i take metforman and lisinipril every day
+Exact match (baseline),missed,lisinipril,misspelled,i take metforman and lisinipril every day
+Exact match (baseline),missed,warfrin,misspelled,my mom is on warfrin and cipro for a bladder infection
+Exact match (baseline),missed,atorvastin,misspelled,atorvastin at night and amlodapine in the morning
+Exact match (baseline),missed,amlodapine,misspelled,atorvastin at night and amlodapine in the morning
+Exact match (baseline),missed,gabapenten,misspelled,he takes gabapenten and tramadal for his back
+Exact match (baseline),missed,tramadal,misspelled,he takes gabapenten and tramadal for his back
+Exact match (baseline),missed,ibuprophen,misspelled,Dr said keep taking omeprazol and stop the ibuprophen
+Exact match (baseline),missed,omeprazol,misspelled,Dr said keep taking omeprazol and stop the ibuprophen
+Exact match (baseline),missed,lorazapam,misspelled,on lorazapam for anxiety and zolpidam for sleep
+Exact match (baseline),missed,zolpidam,misspelled,on lorazapam for anxiety and zolpidam for sleep
+Exact match (baseline),missed,hydroxizine,misspelled,Grandma uses hydroxizine for itching and furosamide for swelling
+Exact match (baseline),missed,furosamide,misspelled,Grandma uses hydroxizine for itching and furosamide for swelling
+Exact match (baseline),missed,losarten,misspelled,"spironolactone and losarten , both for blood pressure"
+Exact match (baseline),missed,benadril,misspelled,I took benadril and xanex last night
+Exact match (baseline),missed,xanex,misspelled,I took benadril and xanex last night
+Exact match (baseline),missed,levothyroxin,misspelled,"levothyroxin , metoprolal , asprin"
+Exact match (baseline),missed,metoprolal,misspelled,"levothyroxin , metoprolal , asprin"
+Exact match (baseline),missed,asprin,misspelled,"levothyroxin , metoprolal , asprin"
+Exact match (baseline),missed,L1SINOPR1L,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+Exact match (baseline),missed,METF0RMIN,ocr_noise,METF0RMIN HCL 500MG TAKE WITH MEALS
+Exact match (baseline),missed,WARFAR1N,ocr_noise,WARFAR1N 5MG TAB AS DIRECTED
+Exact match (baseline),missed,ATORVA5TATIN,ocr_noise,ATORVA5TATIN 40MG TAKE AT BEDTIME
+Exact match (baseline),missed,GA8APENTIN,ocr_noise,GA8APENTIN 300MG CAP TID
+Exact match (baseline),missed,0MEPRAZ0LE,ocr_noise,0MEPRAZ0LE DR 20MG CAP DAILY
+Exact match (baseline),missed,ZOLP1DEM,ocr_noise,ZOLP1DEM 5MG TAB AT BEDTIME PRN
+Exact match (baseline),missed,AML0D1PINE,ocr_noise,AML0D1PINE 5MG TAB DAILY
+Exact match (baseline),missed,TRAMAD0L,ocr_noise,TRAMAD0L 50MG Q6H PRN PAIN
+Exact match (baseline),missed,FUR0SEM1DE,ocr_noise,FUR0SEM1DE 20MG TAKE IN AM
+Fuzzy match (baseline),false_alarm,act,clean,"I ' m 78 and I take metformin and lisinopril , plus Advil when my knees act up ."
+Fuzzy match (baseline),false_alarm,morning,clean,"Ok so morning is Synthroid on an empty stomach , then amlodipine with coffee ."
+Fuzzy match (baseline),false_alarm,Doctor,clean,Doctor switched me from simvastatin to rosuvastatin in March .
+Fuzzy match (baseline),false_alarm,morning,misspelled,atorvastin at night and amlodapine in the morning
+Fuzzy match (baseline),false_alarm,morning,dose_attached,sertraline50mg in the morning
+Fuzzy match (baseline),false_alarm,morning,colloquial,I take my water pill and a baby aspirin every morning
+Fuzzy match (baseline),false_alarm,thyroid,colloquial,"my heart pill , my thyroid pill , and Aleve for pain"
+Fuzzy match (baseline),false_alarm,Lassie,negatives,Norma and Lassie came over in April .
+Fuzzy match (baseline),false_alarm,Celia,negatives,Celia said Atlas the dog ate my orange .
+Fuzzy match (baseline),false_alarm,Flora,negatives,"I take metformin , and my friend Flora takes nothing ."
+Logistic regression,false_alarm,act,clean,"I ' m 78 and I take metformin and lisinopril , plus Advil when my knees act up ."
+Logistic regression,false_alarm,coffee,clean,"Ok so morning is Synthroid on an empty stomach , then amlodipine with coffee ."
+Logistic regression,false_alarm,bedtime,clean,"Lipitor at bedtime , that ' s it really"
+Logistic regression,false_alarm,prostate,clean,I take Eliquis for my heart rhythm and Flomax for my prostate .
+Logistic regression,false_alarm,mom,misspelled,my mom is on warfrin and cipro for a bladder infection
+Logistic regression,false_alarm,anxiety,misspelled,on lorazapam for anxiety and zolpidam for sleep
+Logistic regression,false_alarm,swelling,misspelled,Grandma uses hydroxizine for itching and furosamide for swelling
+Logistic regression,false_alarm,10MG,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+Logistic regression,false_alarm,500MG,ocr_noise,METF0RMIN HCL 500MG TAKE WITH MEALS
+Logistic regression,false_alarm,MEALS,ocr_noise,METF0RMIN HCL 500MG TAKE WITH MEALS
+Logistic regression,false_alarm,5MG,ocr_noise,WARFAR1N 5MG TAB AS DIRECTED
+Logistic regression,false_alarm,40MG,ocr_noise,ATORVA5TATIN 40MG TAKE AT BEDTIME
+Logistic regression,false_alarm,BEDTIME,ocr_noise,ATORVA5TATIN 40MG TAKE AT BEDTIME
+Logistic regression,false_alarm,300MG,ocr_noise,GA8APENTIN 300MG CAP TID
+Logistic regression,false_alarm,20MG,ocr_noise,0MEPRAZ0LE DR 20MG CAP DAILY
+Logistic regression,false_alarm,5MG,ocr_noise,ZOLP1DEM 5MG TAB AT BEDTIME PRN
+Logistic regression,false_alarm,PRN,ocr_noise,ZOLP1DEM 5MG TAB AT BEDTIME PRN
+Logistic regression,false_alarm,5MG,ocr_noise,AML0D1PINE 5MG TAB DAILY
+Logistic regression,false_alarm,50MG,ocr_noise,TRAMAD0L 50MG Q6H PRN PAIN
+Logistic regression,false_alarm,20MG,ocr_noise,FUR0SEM1DE 20MG TAKE IN AM
+Logistic regression,false_alarm,water,colloquial,I take my water pill and a baby aspirin every morning
+Logistic regression,false_alarm,appointment,negatives,Ambrose drove me to Costco after my appointment with Dr . Patel .
+Logistic regression,false_alarm,orange,negatives,Celia said Atlas the dog ate my orange .
+Logistic regression,false_alarm,nothing,negatives,"I take metformin , and my friend Flora takes nothing ."
+Random forest,false_alarm,78,clean,"I ' m 78 and I take metformin and lisinopril , plus Advil when my knees act up ."
+Random forest,false_alarm,prostate,clean,I take Eliquis for my heart rhythm and Flomax for my prostate .
+Random forest,false_alarm,anxiety,misspelled,on lorazapam for anxiety and zolpidam for sleep
+Random forest,false_alarm,swelling,misspelled,Grandma uses hydroxizine for itching and furosamide for swelling
+Random forest,false_alarm,10MG,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+Random forest,false_alarm,TAB,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+Random forest,false_alarm,1,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+Random forest,false_alarm,DAILY,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+Random forest,false_alarm,500MG,ocr_noise,METF0RMIN HCL 500MG TAKE WITH MEALS
+Random forest,false_alarm,MEALS,ocr_noise,METF0RMIN HCL 500MG TAKE WITH MEALS
+Random forest,false_alarm,5MG,ocr_noise,WARFAR1N 5MG TAB AS DIRECTED
+Random forest,false_alarm,TAB,ocr_noise,WARFAR1N 5MG TAB AS DIRECTED
+Random forest,false_alarm,DIRECTED,ocr_noise,WARFAR1N 5MG TAB AS DIRECTED
+Random forest,false_alarm,40MG,ocr_noise,ATORVA5TATIN 40MG TAKE AT BEDTIME
+Random forest,false_alarm,BEDTIME,ocr_noise,ATORVA5TATIN 40MG TAKE AT BEDTIME
+Random forest,false_alarm,300MG,ocr_noise,GA8APENTIN 300MG CAP TID
+Random forest,false_alarm,CAP,ocr_noise,GA8APENTIN 300MG CAP TID
+Random forest,false_alarm,TID,ocr_noise,GA8APENTIN 300MG CAP TID
+Random forest,false_alarm,20MG,ocr_noise,0MEPRAZ0LE DR 20MG CAP DAILY
+Random forest,false_alarm,CAP,ocr_noise,0MEPRAZ0LE DR 20MG CAP DAILY
+Random forest,false_alarm,DAILY,ocr_noise,0MEPRAZ0LE DR 20MG CAP DAILY
+Random forest,false_alarm,5MG,ocr_noise,ZOLP1DEM 5MG TAB AT BEDTIME PRN
+Random forest,false_alarm,TAB,ocr_noise,ZOLP1DEM 5MG TAB AT BEDTIME PRN
+Random forest,false_alarm,BEDTIME,ocr_noise,ZOLP1DEM 5MG TAB AT BEDTIME PRN
+Random forest,false_alarm,5MG,ocr_noise,AML0D1PINE 5MG TAB DAILY
+Random forest,false_alarm,TAB,ocr_noise,AML0D1PINE 5MG TAB DAILY
+Random forest,false_alarm,DAILY,ocr_noise,AML0D1PINE 5MG TAB DAILY
+Random forest,false_alarm,50MG,ocr_noise,TRAMAD0L 50MG Q6H PRN PAIN
+Random forest,false_alarm,Q6H,ocr_noise,TRAMAD0L 50MG Q6H PRN PAIN
+Random forest,false_alarm,PAIN,ocr_noise,TRAMAD0L 50MG Q6H PRN PAIN
+Random forest,false_alarm,20MG,ocr_noise,FUR0SEM1DE 20MG TAKE IN AM
+Random forest,false_alarm,AM,ocr_noise,FUR0SEM1DE 20MG TAKE IN AM
+Random forest,false_alarm,thyroid,colloquial,"my heart pill , my thyroid pill , and Aleve for pain"
+Random forest,false_alarm,orange,negatives,Celia said Atlas the dog ate my orange .
+spaCy NER,false_alarm,78,clean,"I ' m 78 and I take metformin and lisinopril , plus Advil when my knees act up ."
+spaCy NER,false_alarm,knees,clean,"I ' m 78 and I take metformin and lisinopril , plus Advil when my knees act up ."
+spaCy NER,missed,Synthroid,clean,"Ok so morning is Synthroid on an empty stomach , then amlodipine with coffee ."
+spaCy NER,false_alarm,empty,clean,"Ok so morning is Synthroid on an empty stomach , then amlodipine with coffee ."
+spaCy NER,false_alarm,really,clean,"Lipitor at bedtime , that ' s it really"
+spaCy NER,false_alarm,bedtime,clean,"Lipitor at bedtime , that ' s it really"
+spaCy NER,false_alarm,headaches,clean,She uses Tylenol for headaches and takes Zoloft for her mood .
+spaCy NER,missed,simvastatin,clean,Doctor switched me from simvastatin to rosuvastatin in March .
+spaCy NER,false_alarm,March,clean,Doctor switched me from simvastatin to rosuvastatin in March .
+spaCy NER,false_alarm,from,clean,Doctor switched me from simvastatin to rosuvastatin in March .
+spaCy NER,false_alarm,rhythm,clean,I take Eliquis for my heart rhythm and Flomax for my prostate .
+spaCy NER,missed,Benadryl,clean,Benadryl helps me sleep most nights .
+spaCy NER,false_alarm,a,misspelled,my mom is on warfrin and cipro for a bladder infection
+spaCy NER,missed,ibuprophen,misspelled,Dr said keep taking omeprazol and stop the ibuprophen
+spaCy NER,false_alarm,stop,misspelled,Dr said keep taking omeprazol and stop the ibuprophen
+spaCy NER,false_alarm,anxiety,misspelled,on lorazapam for anxiety and zolpidam for sleep
+spaCy NER,false_alarm,itching,misspelled,Grandma uses hydroxizine for itching and furosamide for swelling
+spaCy NER,false_alarm,both,misspelled,"spironolactone and losarten , both for blood pressure"
+spaCy NER,missed,L1SINOPR1L,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+spaCy NER,false_alarm,1,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+spaCy NER,false_alarm,DAILY,ocr_noise,L1SINOPR1L 10MG TAB TAKE 1 DAILY
+spaCy NER,false_alarm,WITH,ocr_noise,METF0RMIN HCL 500MG TAKE WITH MEALS
+spaCy NER,false_alarm,MEALS,ocr_noise,METF0RMIN HCL 500MG TAKE WITH MEALS
+spaCy NER,false_alarm,TAB,ocr_noise,WARFAR1N 5MG TAB AS DIRECTED
+spaCy NER,false_alarm,DIRECTED,ocr_noise,WARFAR1N 5MG TAB AS DIRECTED
+spaCy NER,false_alarm,AT,ocr_noise,ATORVA5TATIN 40MG TAKE AT BEDTIME
+spaCy NER,false_alarm,BEDTIME,ocr_noise,ATORVA5TATIN 40MG TAKE AT BEDTIME
+spaCy NER,false_alarm,300MG,ocr_noise,GA8APENTIN 300MG CAP TID
+spaCy NER,false_alarm,20MG,ocr_noise,0MEPRAZ0LE DR 20MG CAP DAILY
+spaCy NER,false_alarm,DAILY,ocr_noise,0MEPRAZ0LE DR 20MG CAP DAILY
+spaCy NER,false_alarm,TAB,ocr_noise,ZOLP1DEM 5MG TAB AT BEDTIME PRN
+spaCy NER,false_alarm,TAB,ocr_noise,AML0D1PINE 5MG TAB DAILY
+spaCy NER,false_alarm,DAILY,ocr_noise,AML0D1PINE 5MG TAB DAILY
+spaCy NER,missed,TRAMAD0L,ocr_noise,TRAMAD0L 50MG Q6H PRN PAIN
+spaCy NER,false_alarm,50MG,ocr_noise,TRAMAD0L 50MG Q6H PRN PAIN
+spaCy NER,false_alarm,20MG,ocr_noise,FUR0SEM1DE 20MG TAKE IN AM
+spaCy NER,false_alarm,AM,ocr_noise,FUR0SEM1DE 20MG TAKE IN AM
+spaCy NER,missed,metformin500mg,dose_attached,metformin500mg twice a day and lisinopril10mg once
+spaCy NER,false_alarm,daily,dose_attached,gabapentin300mg three times daily
+spaCy NER,false_alarm,needed,dose_attached,oxycodone5mg as needed and lorazepam1mg at night
+spaCy NER,false_alarm,daily,dose_attached,omeprazole20mg daily for years now
+spaCy NER,false_alarm,years,dose_attached,omeprazole20mg daily for years now
+spaCy NER,missed,aspirin,colloquial,I take my water pill and a baby aspirin every morning
+spaCy NER,false_alarm,my,colloquial,I take my water pill and a baby aspirin every morning
+spaCy NER,false_alarm,a,colloquial,I take my water pill and a baby aspirin every morning
+spaCy NER,false_alarm,a,colloquial,she is on a blood thinner and something for her nerves
+spaCy NER,false_alarm,something,colloquial,she is on a blood thinner and something for her nerves
+spaCy NER,false_alarm,PM,colloquial,the little white pill for cholesterol and Tylenol PM at night
+spaCy NER,false_alarm,a,colloquial,he takes his sugar pill and a sleeping pill
+spaCy NER,false_alarm,grapefruit,negatives,I went to Walgreens with Valerie and bought some celery and grapefruit .
+spaCy NER,false_alarm,celery,negatives,I went to Walgreens with Valerie and bought some celery and grapefruit .
+spaCy NER,false_alarm,Walgreens,negatives,I went to Walgreens with Valerie and bought some celery and grapefruit .
+spaCy NER,false_alarm,bought,negatives,I went to Walgreens with Valerie and bought some celery and grapefruit .
+spaCy NER,false_alarm,Norma,negatives,Norma and Lassie came over in April .
+spaCy NER,false_alarm,Lassie,negatives,Norma and Lassie came over in April .
+spaCy NER,false_alarm,April,negatives,Norma and Lassie came over in April .
+spaCy NER,false_alarm,Costco,negatives,Ambrose drove me to Costco after my appointment with Dr . Patel .
+spaCy NER,false_alarm,appointment,negatives,Ambrose drove me to Costco after my appointment with Dr . Patel .
+spaCy NER,false_alarm,nothing,negatives,"I take metformin , and my friend Flora takes nothing ."

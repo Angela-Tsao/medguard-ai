@@ -1,0 +1,27 @@
+{
+ "fuzzy": {
+  "threshold": 0.7272727272727273,
+  "val_recall": 0.990857946554149,
+  "val_precision": 0.9533152909336942
+ },
+ "logreg": {
+  "threshold": 0.48942000755772175,
+  "val_recall": 0.9971870604781997,
+  "val_precision": 0.9992952783650458
+ },
+ "logreg_ctx": {
+  "threshold": 0.3790693087545562,
+  "val_recall": 0.9943741209563994,
+  "val_precision": 0.9992932862190813
+ },
+ "rforest": {
+  "threshold": 0.587810767595833,
+  "val_recall": 0.9950773558368495,
+  "val_precision": 0.9915907498248073
+ },
+ "gboost": {
+  "threshold": 0.27237928957464624,
+  "val_recall": 0.9964838255977496,
+  "val_precision": 0.9725463280713795
+ }
+}

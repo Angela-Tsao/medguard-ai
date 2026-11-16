@@ -1,0 +1,7 @@
+method,setting,lists,gold_alerts,alert_recall,missed_alerts,false_alerts
+Logistic regression,auto-confirm,30,212,1.0,0,0
+Logistic regression,low-confidence matches (<80% similarity) sent to user review,30,212,0.9811320754716981,4,0
+Fuzzy match (baseline),auto-confirm,30,212,1.0,0,11
+Fuzzy match (baseline),low-confidence matches (<80% similarity) sent to user review,30,212,0.9811320754716981,4,0
+Exact match (baseline),auto-confirm,30,212,0.6132075471698113,82,0
+Exact match (baseline),low-confidence matches (<80% similarity) sent to user review,30,212,0.6132075471698113,82,0

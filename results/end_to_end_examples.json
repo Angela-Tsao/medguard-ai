@@ -1,0 +1,530 @@
+[
+ {
+  "text": "Here is everything I take: OXYCODONE, Ativan20mg, CLARITHROMYCIN, glucoophage and Elavil100mg ",
+  "gold_meds": [
+   "amitriptyline",
+   "clarithromycin",
+   "lorazepam",
+   "metformin",
+   "oxycodone"
+  ],
+  "pred_meds": [
+   "amitriptyline",
+   "clarithromycin",
+   "lorazepam",
+   "metformin",
+   "oxycodone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Here is everything I take: 9A8APENT1N, 7RAMADO1, amiodarone and eliquis ",
+  "gold_meds": [
+   "amiodarone",
+   "apixaban",
+   "gabapentin",
+   "tramadol"
+  ],
+  "pred_meds": [
+   "amiodarone",
+   "apixaban",
+   "gabapentin",
+   "tramadol"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Mom's pill box has LISINOPRIL25mg, SPIRONOLACTONE, Elavil500mg, flomax20mg, l1pi7or and Diphenhydramine every day.",
+  "gold_meds": [
+   "amitriptyline",
+   "atorvastatin",
+   "diphenhydramine",
+   "lisinopril",
+   "spironolactone",
+   "tamsulosin"
+  ],
+  "pred_meds": [
+   "amitriptyline",
+   "atorvastatin",
+   "diphenhydramine",
+   "lisinopril",
+   "spironolactone",
+   "tamsulosin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Home visit med review - JANTOVEN, Ciprofloxacin500mg, Hydroxyzine and Lopressor81mg ",
+  "gold_meds": [
+   "ciprofloxacin",
+   "hydroxyzine",
+   "metoprolol",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "ciprofloxacin",
+   "hydroxyzine",
+   "metoprolol",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Bottles on the counter: jantoven500MG, Advil, bzyer and tamsulosin every day.",
+  "gold_meds": [
+   "aspirin",
+   "ibuprofen",
+   "tamsulosin",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "aspirin",
+   "ibuprofen",
+   "tamsulosin",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on BENADRYL, 0XY8U7YNIN and Jantoven81mg plus vitamins.",
+  "gold_meds": [
+   "diphenhydramine",
+   "oxybutynin",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "diphenhydramine",
+   "oxybutynin",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on Ambien, ZOLOFT, Neurontin, tramadol, oxybutynin20mg, losarton and Motrin5mg plus vitamins.",
+  "gold_meds": [
+   "gabapentin",
+   "ibuprofen",
+   "losartan",
+   "oxybutynin",
+   "sertraline",
+   "tramadol",
+   "zolpidem"
+  ],
+  "pred_meds": [
+   "gabapentin",
+   "ibuprofen",
+   "losartan",
+   "oxybutynin",
+   "sertraline",
+   "tramadol",
+   "zolpidem"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on Coumadin40mg, paceronc, vistaril, ultrak, eliquis and ciprofloxac1n every day.",
+  "gold_meds": [
+   "amiodarone",
+   "apixaban",
+   "ciprofloxacin",
+   "hydroxyzine",
+   "tramadol",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "amiodarone",
+   "apixaban",
+   "ciprofloxacin",
+   "hydroxyzine",
+   "tramadol",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are LOSARTAN1000mg, aldactoone and bcrtim plus vitamins.",
+  "gold_meds": [
+   "losartan",
+   "spironolactone",
+   "sulfamethoxazole-trimethoprim"
+  ],
+  "pred_meds": [
+   "losartan",
+   "spironolactone",
+   "sulfamethoxazole-trimethoprim"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are oxycoodone, L0RAZEPAM, TRAMADOL, OXYBUTYNIN, norvvas and apixaban40mg as needed for pain.",
+  "gold_meds": [
+   "amlodipine",
+   "apixaban",
+   "lorazepam",
+   "oxybutynin",
+   "oxycodone",
+   "tramadol"
+  ],
+  "pred_meds": [
+   "amlodipine",
+   "apixaban",
+   "lorazepam",
+   "oxybutynin",
+   "oxycodone",
+   "tramadol"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on GA8APENT1N, ultrz, bonine, LORAZEPAM1000mg and Alprazolam every day.",
+  "gold_meds": [
+   "alprazolam",
+   "gabapentin",
+   "lorazepam",
+   "meclizine",
+   "tramadol"
+  ],
+  "pred_meds": [
+   "alprazolam",
+   "gabapentin",
+   "lorazepam",
+   "meclizine",
+   "tramadol"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Here is everything I take: Prinivil, A1DACTONE, G1UC07R01 and CIPR0FLOXAC1N in the morning and at night.",
+  "gold_meds": [
+   "ciprofloxacin",
+   "glipizide",
+   "lisinopril",
+   "spironolactone"
+  ],
+  "pred_meds": [
+   "ciprofloxacin",
+   "glipizide",
+   "lisinopril",
+   "spironolactone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Mom's pill box has WARFAR1N, Ciprofloxacin40mg, metfoomin, spirono1act0ne, gluucotrol and CLARI7HROMYC1N in the morning and at night.",
+  "gold_meds": [
+   "ciprofloxacin",
+   "clarithromycin",
+   "glipizide",
+   "metformin",
+   "spironolactone",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "ciprofloxacin",
+   "clarithromycin",
+   "glipizide",
+   "metformin",
+   "spironolactone",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Here is everything I take: Coumadin, ADVIL and flexeril as needed for pain.",
+  "gold_meds": [
+   "cyclobenzaprine",
+   "ibuprofen",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "cyclobenzaprine",
+   "ibuprofen",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Home visit med review - DIPHENHYDRAMINE, DITROPAN, 9ABAPENT1N and HYDROXYZINE1000mg ",
+  "gold_meds": [
+   "diphenhydramine",
+   "gabapentin",
+   "hydroxyzine",
+   "oxybutynin"
+  ],
+  "pred_meds": [
+   "diphenhydramine",
+   "gabapentin",
+   "hydroxyzine",
+   "oxybutynin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on ZOLPIDEM, SERTRA11NE, NEURONTIN81mg, c1prof10xacin, RIVAROXA8AN and WARFAR1N every day.",
+  "gold_meds": [
+   "ciprofloxacin",
+   "gabapentin",
+   "rivaroxaban",
+   "sertraline",
+   "warfarin",
+   "zolpidem"
+  ],
+  "pred_meds": [
+   "ciprofloxacin",
+   "gabapentin",
+   "rivaroxaban",
+   "sertraline",
+   "warfarin",
+   "zolpidem"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Bottles on the counter: warfarin, Cordarone, Z01P1DEM, glucophage, Amlodipine and digoxij every day.",
+  "gold_meds": [
+   "amiodarone",
+   "amlodipine",
+   "digoxin",
+   "metformin",
+   "warfarin",
+   "zolpidem"
+  ],
+  "pred_meds": [
+   "amiodarone",
+   "amlodipine",
+   "digoxin",
+   "metformin",
+   "warfarin",
+   "zolpidem"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Here is everything I take: cozaar81mg, aldactone and ACETAMINOPHEN1000mg plus vitamins.",
+  "gold_meds": [
+   "acetaminophen",
+   "losartan",
+   "spironolactone"
+  ],
+  "pred_meds": [
+   "acetaminophen",
+   "losartan",
+   "spironolactone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Mom's pill box has oxycontin, Ativan500mg and AM1ODIP1NE plus vitamins.",
+  "gold_meds": [
+   "amlodipine",
+   "lorazepam",
+   "oxycodone"
+  ],
+  "pred_meds": [
+   "amlodipine",
+   "lorazepam",
+   "oxycodone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on Gabapentin, tramadol, 7razodonc, c0zaar and oxyc0n7in plus vitamins.",
+  "gold_meds": [
+   "gabapentin",
+   "losartan",
+   "oxycodone",
+   "tramadol",
+   "trazodone"
+  ],
+  "pred_meds": [
+   "gabapentin",
+   "losartan",
+   "oxycodone",
+   "tramadol",
+   "trazodone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on Lisinopril, spironalactona and biain in the morning and at night.",
+  "gold_meds": [
+   "clarithromycin",
+   "lisinopril",
+   "spironolactone"
+  ],
+  "pred_meds": [
+   "clarithromycin",
+   "lisinopril",
+   "spironolactone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are Coumadin500mg, cipofloxacin and benadryl ",
+  "gold_meds": [
+   "ciprofloxacin",
+   "diphenhydramine",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "ciprofloxacin",
+   "diphenhydramine",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Bottles on the counter: jantovni, Ibuprofen and zolift plus vitamins.",
+  "gold_meds": [
+   "ibuprofen",
+   "sertraline",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "ibuprofen",
+   "sertraline",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are BENADRYL500mg, Oxybutynin25mg, ativan40mg and donepzil in the morning and at night.",
+  "gold_meds": [
+   "diphenhydramine",
+   "donepezil",
+   "lorazepam",
+   "oxybutynin"
+  ],
+  "pred_meds": [
+   "diphenhydramine",
+   "donepezil",
+   "lorazepam",
+   "oxybutynin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are AMBIEN, ZOLOFT, NEURONTIN5mg, ARICEP7 and metformen every day.",
+  "gold_meds": [
+   "donepezil",
+   "gabapentin",
+   "metformin",
+   "sertraline",
+   "zolpidem"
+  ],
+  "pred_meds": [
+   "donepezil",
+   "gabapentin",
+   "metformin",
+   "sertraline",
+   "zolpidem"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are c0umad1n, paicerone and GLUCOTROL ",
+  "gold_meds": [
+   "amiodarone",
+   "glipizide",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "amiodarone",
+   "glipizide",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "Mom's pill box has LOSARTAN, Aldactone, Omeprazole, prinivil and AT1VAN plus vitamins.",
+  "gold_meds": [
+   "lisinopril",
+   "lorazepam",
+   "losartan",
+   "omeprazole",
+   "spironolactone"
+  ],
+  "pred_meds": [
+   "lisinopril",
+   "lorazepam",
+   "losartan",
+   "omeprazole",
+   "spironolactone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are OXYCODONE500MG, LORAZEPAM, PREDNISONC and coumadon every day.",
+  "gold_meds": [
+   "lorazepam",
+   "oxycodone",
+   "prednisone",
+   "warfarin"
+  ],
+  "pred_meds": [
+   "lorazepam",
+   "oxycodone",
+   "prednisone",
+   "warfarin"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "I am on Neurontin, TRAMAD0L and bonine plus vitamins.",
+  "gold_meds": [
+   "gabapentin",
+   "meclizine",
+   "tramadol"
+  ],
+  "pred_meds": [
+   "gabapentin",
+   "meclizine",
+   "tramadol"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ },
+ {
+  "text": "My daily meds are 1ISINOPR1L, 5P1R0N01ACTONC and Metformin in the morning and at night.",
+  "gold_meds": [
+   "lisinopril",
+   "metformin",
+   "spironolactone"
+  ],
+  "pred_meds": [
+   "lisinopril",
+   "metformin",
+   "spironolactone"
+  ],
+  "missed_alerts": [],
+  "extra_alerts": []
+ }
+]

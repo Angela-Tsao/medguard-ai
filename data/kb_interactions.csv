@@ -1,0 +1,9 @@
+group_a,group_b,risk_plain_language,source,verified
+OPIOID,BENZODIAZEPINE,Taken together these can slow breathing dangerously and raise overdose risk,AGS Beers Criteria 2023 Table 5,YES
+OPIOID,GABAPENTINOID,Taken together these raise the risk of severe drowsiness and slowed breathing,AGS Beers Criteria 2023 Table 5,YES
+RAS_INHIBITOR,POTASSIUM_SPARING_DIURETIC,"Taken together these can raise blood potassium to dangerous levels. Beers limits this to CKD stage 3a or higher; this app does not check kidney function, so ask a pharmacist.",AGS Beers Criteria 2023 Table 5,YES
+warfarin,ciprofloxacin,This antibiotic can increase warfarin's effect and bleeding risk,AGS Beers Criteria 2023 Table 5,YES
+warfarin,clarithromycin,This antibiotic can increase warfarin's effect and bleeding risk. Beers lists this via 'macrolides (excluding azithromycin)' — clarithromycin is a macrolide.,AGS Beers Criteria 2023 Table 5,YES
+warfarin,sulfamethoxazole-trimethoprim,This antibiotic can increase warfarin's effect and bleeding risk,AGS Beers Criteria 2023 Table 5,YES
+warfarin,amiodarone,Amiodarone can increase warfarin's effect and bleeding risk,AGS Beers Criteria 2023 Table 5,YES
+warfarin,NSAID,Taking an NSAID with warfarin raises the risk of serious bleeding,FDA warfarin label (Drug Interactions),YES

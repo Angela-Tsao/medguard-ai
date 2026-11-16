@@ -1,0 +1,17 @@
+{
+ "fuzzy": {
+  "threshold": 0.7272727272727273,
+  "val_recall": 0.990857946554149,
+  "val_precision": 0.9533152909336942
+ },
+ "logreg": {
+  "threshold": 0.07312231696991749,
+  "val_recall": 0.9992967651195499,
+  "val_precision": 0.9074074074074074
+ },
+ "rforest": {
+  "threshold": 0.1946994659556384,
+  "val_recall": 0.9992967651195499,
+  "val_precision": 0.936717205009888
+ }
+}

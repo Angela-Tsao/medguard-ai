@@ -1,0 +1,20 @@
+canonical,drug_class,concern_plain_language,source,verified
+diphenhydramine,First-generation antihistamine,"Strongly anticholinergic; can cause confusion, dry mouth, constipation and urinary retention in older adults",AGS Beers Criteria 2023 Table 2,PENDING
+hydroxyzine,First-generation antihistamine,Strongly anticholinergic; can cause confusion and drowsiness in older adults,AGS Beers Criteria 2023 Table 2,PENDING
+meclizine,First-generation antihistamine,Strongly anticholinergic; can cause confusion and drowsiness in older adults,AGS Beers Criteria 2023 Table 2,PENDING
+amitriptyline,Tricyclic antidepressant,Strongly anticholinergic and sedating; can cause confusion and dizziness when standing,AGS Beers Criteria 2023 Table 2,PENDING
+oxybutynin,Bladder antimuscarinic,Strongly anticholinergic; can worsen memory and cause confusion,AGS Beers Criteria 2023 Table 2,PENDING
+lorazepam,Benzodiazepine,"Increased risk of confusion, falls, fractures and car crashes in older adults",AGS Beers Criteria 2023 Table 2,PENDING
+alprazolam,Benzodiazepine,"Increased risk of confusion, falls, fractures and car crashes in older adults",AGS Beers Criteria 2023 Table 2,PENDING
+diazepam,Benzodiazepine (long-acting),"Increased risk of confusion, falls, fractures and car crashes in older adults",AGS Beers Criteria 2023 Table 2,PENDING
+zolpidem,Non-benzodiazepine sleep medicine (Z-drug),"Similar risks to benzodiazepines: confusion, falls and fractures",AGS Beers Criteria 2023 Table 2,PENDING
+cyclobenzaprine,Skeletal muscle relaxant,"Poorly tolerated by older adults; anticholinergic effects, sedation and fall risk",AGS Beers Criteria 2023 Table 2,PENDING
+glipizide,Sulfonylurea,Higher risk of low blood sugar (hypoglycemia) in older adults,AGS Beers Criteria 2023 Table 2,PENDING
+ibuprofen,NSAID,Long-term use raises risk of stomach bleeding and kidney injury,AGS Beers Criteria 2023 Table 2,PENDING
+naproxen,NSAID,Long-term use raises risk of stomach bleeding and kidney injury,AGS Beers Criteria 2023 Table 2,PENDING
+aspirin,Antiplatelet,Use for primary prevention of heart disease is listed as potentially inappropriate due to bleeding risk,AGS Beers Criteria 2023 Table 2,PENDING
+warfarin,Anticoagulant,Listed as potentially inappropriate to start as first choice for atrial fibrillation or blood clots when safer options exist,AGS Beers Criteria 2023 Table 2,PENDING
+rivaroxaban,Anticoagulant,Listed as potentially inappropriate for long-term treatment when safer options exist due to bleeding risk,AGS Beers Criteria 2023 Table 2,PENDING
+omeprazole,Proton pump inhibitor,"Scheduled use beyond 8 weeks linked to C. difficile infection, bone loss and fractures",AGS Beers Criteria 2023 Table 2,PENDING
+digoxin,Cardiac glycoside,Avoid as first-line for atrial fibrillation or heart failure; higher doses raise toxicity risk,AGS Beers Criteria 2023 Table 2,PENDING
+amiodarone,Antiarrhythmic,Avoid as first-line for atrial fibrillation unless heart failure is present; more toxicity than alternatives,AGS Beers Criteria 2023 Table 2,PENDING
