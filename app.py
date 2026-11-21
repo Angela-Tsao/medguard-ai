@@ -332,7 +332,7 @@ with tab_biz:
     with st.container(key="mgbox_biz3"):
         st.subheader("Path to a real product")
         st.dataframe(pd.DataFrame([
-            ["Now (class prototype)", "101 medications, 44 with rules; synthetic + team test data", "Student time"],
+            ["Now (class prototype)", "101 medications, 49 with rules; synthetic + team test data", "Student time"],
             ["Pilot (3 months)", "Full RxNorm name list, every rule verified by a pharmacist, 1 home health agency", "Pharmacist review hours, hosting"],
             ["Version 1", "Licensed interaction database, bottle-photo input, HIPAA-ready hosting", "Data license, compliance, security review"],
             ["Version 2", "Connect to agency records (FHIR) so lists are pre-filled", "Integration work per customer"],
