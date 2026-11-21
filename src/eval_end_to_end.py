@@ -45,12 +45,12 @@ def alert_keys(meds):
 rows, examples = [], []
 lists = [make_list(i) for i in range(30)]
 for method in METHODS:
-    for setting in ["auto-confirm", "low-confidence matches (<80% similarity) sent to user review"]:
+    for setting in ["auto-confirm", "weak matches and everyday words sent to user review"]:
         tp = fn = fp = 0
         for text, gold in lists:
             det = detect(text, method)
-            if setting == "low-confidence matches (<80% similarity) sent to user review":
-                det = [d for d in det if d["similarity"] >= 80]
+            if setting == "weak matches and everyday words sent to user review":
+                det = [d for d in det if not d["needs_review"]]
             pred = sorted({d["canonical"] for d in det})
             g, p = alert_keys(gold), alert_keys(pred)
             tp += len(g & p); fn += len(g - p); fp += len(p - g)

@@ -95,10 +95,13 @@ class AlertEngine:
     def members(self, canon):
         return set(self.groups.loc[self.groups.canonical == canon, "group"]) | {canon}
 
+    SEVERITY_ORDER = {"Major": 0, "Avoid combination": 1, "Moderate-Major": 2, "Moderate": 3}
+
     def check(self, canonicals):
         meds = sorted(set(canonicals))
         alerts, not_assessed = [], [m for m in meds if m not in IN_SCOPE]
         assessed = [m for m in meds if m in IN_SCOPE]
+        ddi = []
         # 1. drug-drug interactions (pairwise, by drug or drug group)
         for i in range(len(assessed)):
             for j in range(i + 1, len(assessed)):
@@ -106,28 +109,30 @@ class AlertEngine:
                 ma, mb = self.members(a), self.members(b)
                 for _, r in self.ddi.iterrows():
                     if (r.group_a in ma and r.group_b in mb) or (r.group_a in mb and r.group_b in ma):
-                        alerts.append({"type": "Drug interaction", "drugs": f"{a} + {b}",
-                                       "message": r.risk_plain_language, "source": r.source,
-                                       "key": ("DDI", tuple(sorted((a, b))))})
-        # group-count rules (e.g., >=3 CNS-active drugs)
+                        note = r.context_note if isinstance(r.context_note, str) and r.context_note else ""
+                        ddi.append({"type": "Drug interaction", "rule_id": r.rule_id, "severity": r.severity,
+                                    "drugs": f"{a} + {b}", "message": r.risk_plain_language, "note": note,
+                                    "source": r.source, "key": (r.rule_id, tuple(sorted((a, b))))})
+        # group-count rules (e.g., 2+ anticholinergics, 3+ CNS-active drugs)
         for _, r in self.group_rules.iterrows():
             hits = [m for m in assessed if r.group in self.members(m)]
             if len(hits) >= r.min_count:
-                alerts.append({"type": "Drug interaction", "drugs": " + ".join(hits),
-                               "message": r.risk_plain_language, "source": r.source,
-                               "key": ("GROUP", r.group)})
+                ddi.append({"type": "Drug interaction", "rule_id": r.rule_id, "severity": r.severity,
+                            "drugs": " + ".join(hits), "message": r.risk_plain_language, "note": "",
+                            "source": r.source, "key": (r.rule_id, tuple(hits))})
+        alerts += sorted(ddi, key=lambda x: (self.SEVERITY_ORDER.get(x["severity"], 9), x["rule_id"]))
         # 2. Beers potentially inappropriate medications
         for m in assessed:
             if m in self.pim.index:
                 r = self.pim.loc[m]
-                alerts.append({"type": "Older-adult caution (Beers)", "drugs": m,
-                               "message": f"{r.drug_class}: {r.concern_plain_language}",
+                alerts.append({"type": "Older-adult caution (Beers)", "rule_id": "BEERS", "severity": r.level,
+                               "drugs": m, "message": f"{r.drug_class}: {r.concern_plain_language}", "note": "",
                                "source": r.source, "key": ("PIM", m)})
         # 3. geriatric-relevant side effects
         for m in assessed:
             if m in self.se.index:
                 r = self.se.loc[m]
-                alerts.append({"type": "Side effects to watch", "drugs": m,
-                               "message": r.geriatric_flags.replace(";", ", "),
+                alerts.append({"type": "Side effects to watch", "rule_id": "SE", "severity": "Info",
+                               "drugs": m, "message": r.geriatric_flags.replace(";", "; "), "note": "",
                                "source": r.source, "key": ("SE", m)})
         return alerts, not_assessed

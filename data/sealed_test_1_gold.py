@@ -1,0 +1,42 @@
+# Hand-labelled medication mentions for sealed test set 1 (ML_test_1.docx, 150 sentences).
+# One list per sentence, in order; repeated mentions are listed again.
+# Counted: any specific named medicine (prescription or OTC, brand or generic).
+# Neutral (not counted either way): supplements, vitamins/minerals, drug classes, product suffixes.
+GOLD = [
+["Lisinopril","Atorvastatin"],["Tylenol","Advil"],["Metformin","Januvia"],["Claritin","Flonase"],["Levothyroxine"],
+["Zoloft","Trazodone"],["Pepto-Bismol","Amoxicillin"],["Mucinex","Sudafed"],["Eliquis","Metoprolol"],["Omeprazole","Pepcid"],
+["ibuprofen"],["Motrin","Tylenol"],["Gabapentin","Cyclobenzaprine"],["Benadryl","Zyrtec"],["Prednisone"],
+["Advil","Aleve"],["Xanax","OxyContin"],["Viagra","nitroglycerin"],["Warfarin","aspirin"],["Prozac","Tramadol"],
+["NyQuil","Tylenol","acetaminophen"],["Lipitor","Paxlovid"],["Adderall","Sudafed"],["Ambien","Benadryl"],["Lisinopril","Losartan"],
+["Cipro","Tums"],["Flexeril","Valium"],["Wellbutrin","Nardil"],["Spironolactone"],["Plavix","Prilosec"],
+[],["DayQuil"],["doxycycline"],["Lexapro"],["Excedrin","Zoloft"],
+["acetaminophen"],["Synthroid"],["Zocor"],["ibuprofen","Lisinopril"],["Percocet"],
+["aspirin","ibuprofen"],[],["Imodium","Zofran"],["Robitussin","dextromethorphan"],["Toradol","Advil"],
+[],["Amlodipine","Simvastatin"],["Klonopin","gabapentin"],["diphenhydramine"],["Eliquis","Lipitor","Paxlovid"],
+["Losartan","Hydrochlorothiazide"],["Crestor"],["Augmentin"],["Allegra"],["Lamictal"],
+["Effexor","Motrin"],["Xarelto"],["Metoprolol","Amlodipine"],["Lantus","Metformin"],["Ozempic","Glipizide"],
+["Jardiance","Lasix"],["Lasix"],["Digoxin"],["Allopurinol","amoxicillin"],["Colchicine","Clarithromycin"],
+["Celebrex","Advil","aspirin"],["Meloxicam","Excedrin"],["Naproxen","Ketorolac"],["Tramadol","Benadryl"],["Norco","Tylenol","Norco","acetaminophen"],
+["Suboxone"],["Naltrexone","codeine"],["Buspar"],["Cymbalta","Imitrex"],["Imitrex"],
+["Nurtec","ketoconazole"],["Topamax"],["Keppra"],["Dilantin"],["Tegretol"],
+["lithium","ibuprofen"],["Seroquel"],["Abilify"],["Vyvanse","Alka-Seltzer"],["Ritalin","phenylephrine"],
+["Strattera"],["Tamsulosin","Flomax","sildenafil"],["Finasteride"],["Pantoprazole"],["Nexium"],
+["Carafate"],["Zofran"],["Reglan"],["MiraLAX"],["Colace"],
+[],[],["Bactrim","tetracycline"],["aspirin"],["Pravastatin"],
+["Eliquis"],["Valacyclovir"],["Tamiflu","Tylenol"],["Diflucan","Simvastatin"],["Flagyl"],
+["Bactrim"],["Keflex"],["Azithromycin","Z-Pak","Maalox"],["Clindamycin","Imodium"],["Macrobid","Levothyroxine"],
+["Azo","phenazopyridine"],["Montelukast","Singulair","Symbicort"],["Albuterol","Propranolol"],["Propranolol","Amlodipine"],["Atenolol"],
+["Diltiazem","Lovastatin"],["Verapamil"],["Coreg","carvedilol","Lisinopril"],["Entresto","Lisinopril"],["Isosorbide","Cialis","Viagra"],
+["Amiodarone","Warfarin","Amiodarone"],["Tikosyn","HCTZ","trimethoprim"],["Brilinta","aspirin","Brilinta"],[],["Alendronate","Fosamax"],
+["Methotrexate","Bactrim"],["Humira","Methotrexate"],["Plaquenil","hydroxychloroquine"],["Imuran","azathioprine","Allopurinol","Imuran"],["Tacrolimus"],
+["Cyclosporine"],["Tamoxifen","Paxil","Prozac"],["Anastrozole"],["Xyzal","Benadryl"],["Afrin","Claritin-D"],
+["Theraflu","Tylenol"],["Alka-Seltzer","aspirin","aspirin"],["Mucinex","Mucinex"],["Dramamine","Benadryl"],["Bonine","meclizine","Robaxin"],
+["Robaxin","methocarbamol","Ativan"],["Ativan"],["Restoril","codeine","hydrocodone"],["Lunesta","Trazodone"],["Belsomra","itraconazole"],
+["Chantix"],[],["Accutane","doxycycline"],["Spironolactone"],[],
+]
+NEUTRAL = {"multivitamin","calcium","vitamin","d","c","b12","nsaids","nsaid","maois","potassium","chloride","iron","melatonin","ssri",
+ "opioid","opioids","antacids","antacid","aluminum","magnesium","aluminum-magnesium","probiotic","insulin","triptans","triptan","antihistamines",
+ "antihistamine","decongestants","decongestant","beta-blockers","beta-blocker","fluoroquinolone","antibiotic","antibiotics","glycinate","sulfate",
+ "zinc","fish","oil","coq10","turmeric","folic","acid","carbonate","ferrous","st","john","wort","nicotine","antidepressant","antipsychotics",
+ "statin","plus","dm","pm","ds","odt","cold","migraine","mononitrate","antifungal","inhibitors","stimulants","painkillers","painkiller","supplements",
+ "supplement","laxative","cough","syrup","syrups","pills","pill","contraception","birth","control","mouthwash","alcohol","patches","inhaler"}

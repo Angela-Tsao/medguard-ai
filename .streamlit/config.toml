@@ -1,0 +1,42 @@
+[server]
+# serves ./static so the bundled Inter font works offline
+enableStaticServing = true
+
+[theme]
+base = "light"
+primaryColor = "#B91C1C"
+backgroundColor = "#FFF1F2"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1F2937"
+font = "Inter, sans-serif"
+headingFont = "Inter, sans-serif"
+baseRadius = "0.75rem"
+buttonRadius = "0.625rem"
+borderColor = "#E5E7EB"
+showWidgetBorder = true
+linkColor = "#B91C1C"
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/inter-latin-400-normal.woff2"
+weight = 400
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/inter-latin-500-normal.woff2"
+weight = 500
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/inter-latin-600-normal.woff2"
+weight = 600
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/inter-latin-700-normal.woff2"
+weight = 700
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/inter-latin-800-normal.woff2"
+weight = 800

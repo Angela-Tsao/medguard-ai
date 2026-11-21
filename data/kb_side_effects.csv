@@ -32,3 +32,8 @@ trazodone,drowsiness;dizziness,FDA label (openFDA adverse_reactions),YES
 tamsulosin,dizziness when standing,FDA label (openFDA adverse_reactions),YES
 donepezil,slow heart rate;fainting,FDA label (openFDA adverse_reactions),YES
 digoxin,nausea;confusion,FDA label (openFDA adverse_reactions),YES
+atorvastatin,muscle aches;tiredness;rarely liver test changes,Team table (DailyMed / openFDA labels),PENDING
+levothyroxine,"fast heartbeat, trouble sleeping or shaky hands if the dose is too high;dizziness",Team table (DailyMed / openFDA labels),PENDING
+hydrochlorothiazide,dizziness;dehydration;low potassium or sodium;falls,Team table (DailyMed / openFDA labels),PENDING
+omeprazole,headache;diarrhea;long-term: low B12 or magnesium and fracture risk,Team table (DailyMed / openFDA labels),PENDING
+acetaminophen,liver damage if the total daily amount is too high - count every product that contains acetaminophen,Team table (DailyMed / openFDA labels),PENDING

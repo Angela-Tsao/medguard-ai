@@ -32,8 +32,17 @@ def scores_lr(tokens):
 # Selected model = lowest misclassification cost on VALIDATION (see results/thresholds.json)
 METHODS = ["Logistic regression", "Fuzzy match (baseline)", "Exact match (baseline)"]
 
+from wordfreq import zipf_frequency
+COMMON_WORD_ZIPF = 3.5  # everyday English words (e.g., "diabetes", "medicine") are never mapped to a drug
+
+def is_common_word(tok):
+    t = strip_dose(tok).lower()
+    return t not in NAME2CANON and t.isalpha() and zipf_frequency(t, "en") >= COMMON_WORD_ZIPF
+
 def detect(text, method="Logistic regression", threshold=None):
-    tokens = tokenize(text)
+    tokens = tokenize(text or "")
+    if not tokens:
+        return []
     if method == "Exact match (baseline)":
         flags = [(strip_dose(t) in NAME2CANON, 1.0) for t in tokens]
     elif method == "Fuzzy match (baseline)":
@@ -48,9 +57,12 @@ def detect(text, method="Logistic regression", threshold=None):
     for t, (f, score) in zip(tokens, flags):
         if f:
             sim, canon, matched = best_match(t)
+            common = is_common_word(t)
             out.append({"token": t, "canonical": canon, "matched_name": matched,
                         "similarity": round(sim, 1), "model_score": round(score, 3),
-                        "in_scope": canon in IN_SCOPE})
+                        "in_scope": canon in IN_SCOPE, "common_word": common,
+                        # everyday words and weak matches are never auto-mapped: the user must confirm
+                        "needs_review": common or sim < 80})
     return out
 
 def check(canonicals):

@@ -1,9 +1,20 @@
-group_a,group_b,risk_plain_language,source,verified
-OPIOID,BENZODIAZEPINE,Taken together these can slow breathing dangerously and raise overdose risk,AGS Beers Criteria 2023 Table 5,YES
-OPIOID,GABAPENTINOID,Taken together these raise the risk of severe drowsiness and slowed breathing,AGS Beers Criteria 2023 Table 5,YES
-RAS_INHIBITOR,POTASSIUM_SPARING_DIURETIC,"Taken together these can raise blood potassium to dangerous levels. Beers limits this to CKD stage 3a or higher; this app does not check kidney function, so ask a pharmacist.",AGS Beers Criteria 2023 Table 5,YES
-warfarin,ciprofloxacin,This antibiotic can increase warfarin's effect and bleeding risk,AGS Beers Criteria 2023 Table 5,YES
-warfarin,clarithromycin,This antibiotic can increase warfarin's effect and bleeding risk. Beers lists this via 'macrolides (excluding azithromycin)' — clarithromycin is a macrolide.,AGS Beers Criteria 2023 Table 5,YES
-warfarin,sulfamethoxazole-trimethoprim,This antibiotic can increase warfarin's effect and bleeding risk,AGS Beers Criteria 2023 Table 5,YES
-warfarin,amiodarone,Amiodarone can increase warfarin's effect and bleeding risk,AGS Beers Criteria 2023 Table 5,YES
-warfarin,NSAID,Taking an NSAID with warfarin raises the risk of serious bleeding,FDA warfarin label (Drug Interactions),YES
+rule_id,group_a,group_b,severity,risk_plain_language,context_note,source,verified
+R1,warfarin,ibuprofen,Major,Taking an NSAID with warfarin raises the risk of serious bleeding,,FDA warfarin label (Drug Interactions),YES
+R2,warfarin,naproxen,Major,Taking an NSAID with warfarin raises the risk of serious bleeding,,FDA warfarin label (Drug Interactions),YES
+R3,warfarin,aspirin,Major,Taking an NSAID with warfarin raises the risk of serious bleeding,,FDA warfarin label (Drug Interactions),YES
+R4,apixaban,NSAID,Major,A blood thinner plus an NSAID pain reliever raises bleeding risk.,,"DailyMed label, Drug Interactions section (apixaban)",PENDING
+R5,clopidogrel,aspirin,Moderate-Major,Two anti-platelet medicines together raise bleeding risk.,"Some people, for example after a heart stent, are prescribed both on purpose. Do not stop either one; confirm with your doctor.","DailyMed label, Drug Interactions section (clopidogrel)",PENDING
+R6,lisinopril,losartan,Avoid combination,Both act on the same blood-pressure system (RAS). Together they can raise potassium and harm the kidneys.,,"DailyMed label, Drug Interactions section (lisinopril, losartan)",PENDING
+R7,RAS_INHIBITOR,NSAID,Moderate-Major,"NSAIDs can make blood-pressure medicine work less well, harm the kidneys and raise potassium.",,"DailyMed label, Drug Interactions section (lisinopril)",PENDING
+R8,sertraline,NSAID,Moderate,This antidepressant plus an NSAID raises bleeding risk.,,"DailyMed label, Drug Interactions section (sertraline)",PENDING
+R9,sertraline,warfarin,Major,This antidepressant plus a blood thinner raises bleeding risk.,,"DailyMed label, Drug Interactions section (sertraline)",PENDING
+R10,BENZODIAZEPINE,zolpidem,Major,"Two sedating sleep or anxiety medicines together raise the risk of heavy drowsiness, confusion, falls and slowed breathing.",,"DailyMed label, Drug Interactions section (zolpidem)",PENDING
+R11,BENZODIAZEPINE,diphenhydramine,Moderate-Major,"A sedative plus a strongly anticholinergic antihistamine raises the risk of confusion, drowsiness and falls.",,"DailyMed label, Drug Interactions section (lorazepam)",PENDING
+R13,omeprazole,clopidogrel,Moderate,Omeprazole may make clopidogrel work less well. Ask your pharmacist or doctor.,,"DailyMed label, Drug Interactions section (clopidogrel)",PENDING
+R14,OPIOID,BENZODIAZEPINE,Major,Taken together these can slow breathing dangerously and raise overdose risk,,AGS Beers Criteria 2023 Table 5,YES
+R15,OPIOID,GABAPENTINOID,Major,Taken together these raise the risk of severe drowsiness and slowed breathing,,AGS Beers Criteria 2023 Table 5,YES
+R16,RAS_INHIBITOR,POTASSIUM_SPARING_DIURETIC,Major,"Taken together these can raise blood potassium to dangerous levels. Beers limits this to CKD stage 3a or higher; this app does not check kidney function, so ask a pharmacist.",,AGS Beers Criteria 2023 Table 5,YES
+R17,warfarin,ciprofloxacin,Major,This antibiotic can increase warfarin's effect and bleeding risk,,AGS Beers Criteria 2023 Table 5,YES
+R18,warfarin,clarithromycin,Major,This antibiotic can increase warfarin's effect and bleeding risk. Beers lists this via 'macrolides (excluding azithromycin)' — clarithromycin is a macrolide.,,AGS Beers Criteria 2023 Table 5,YES
+R19,warfarin,sulfamethoxazole-trimethoprim,Major,This antibiotic can increase warfarin's effect and bleeding risk,,AGS Beers Criteria 2023 Table 5,YES
+R20,warfarin,amiodarone,Major,Amiodarone can increase warfarin's effect and bleeding risk,,AGS Beers Criteria 2023 Table 5,YES
