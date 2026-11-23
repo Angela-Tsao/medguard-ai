@@ -3,6 +3,10 @@
 Medication safety alerts for older adults. Free-text medication list in → recognized medications →
 user confirmation → alerts (drug interactions, Beers Criteria cautions, geriatric side effects) with sources.
 
+**For judges:** [Model card](docs/MedGuard_AI_Model_Card.docx) · [Technical report](docs/MedGuard_AI_Technical_Report.docx) ·
+[Full ML analysis (notebook, all outputs)](MedGuard_ML_Analysis.ipynb). MedGuard AI is decision support for clinicians:
+every flag is for a doctor or pharmacist to review, and patients must not use it to make medication decisions on their own.
+
 ## Run the app
     pip install -r requirements.txt
     streamlit run app.py

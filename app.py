@@ -28,7 +28,7 @@ SUPPLEMENT_RE = re.compile(r"\b(vitamin\s*[a-z0-9]?\b|fish oil|omega-?3|suppleme
 DISCLAIMER = ("MedGuard AI helps you share an accurate medication list with your doctor or pharmacist. It is not a tool for "
               "making medication decisions: it does not tell you whether a medication is safe for you, and every flag must be reviewed "
               "by a doctor or pharmacist. Do not start, stop or change any medication based on this app. "
-              "Student prototype; safety rules are a sample pending verification.")
+              "Student prototype; 64 of 94 safety rules have been checked against their sources by the team, none yet by a pharmacist.")
 POSITIONING = ("A communication bridge between patients and clinicians: it turns the list a patient writes into a clear, "
                "standardized list so the doctor or pharmacist knows what the patient is actually taking, and flags items "
                "for the clinician to review.")
@@ -468,6 +468,6 @@ with tab_rai:
             ["Model", "Logistic regression on character patterns + dictionary similarity; threshold set by cost (miss = 10× false flag)"],
             ["Training data", "Synthetic sentences; split by drug, template and word to prevent leakage"],
             ["Evaluation", "Synthetic test, hand-written set, two 150-sentence team tests (each scored once), 30-list end-to-end alert test. Next: 10–20 lists written by people outside the team"],
-            ["Known limits", "English only; 101-medication list; rules pending pharmacist verification; single-word names"],
+            ["Known limits", "English only; 101-medication list; 64 of 94 rules checked against sources by the team, not yet by a pharmacist; single-word names"],
             ["Privacy", "No real patient data; nothing is stored after the session"],
         ], columns=["Item", "Details"]).set_index("Item"))
