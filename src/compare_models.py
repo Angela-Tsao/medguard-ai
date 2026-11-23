@@ -91,6 +91,7 @@ def prob_rf(s):
 
 # spaCy NER (blank English pipeline, trained from scratch on the same training sentences)
 print("training spaCy NER ...")
+spacy.util.fix_random_seed(42)
 nlp = spacy.blank("en")
 ner = nlp.add_pipe("ner"); ner.add_label("DRUG")
 def to_example(s):

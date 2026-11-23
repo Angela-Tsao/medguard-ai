@@ -27,3 +27,16 @@ amitriptyline,CNS_ACTIVE
 sertraline,CNS_ACTIVE
 trazodone,CNS_ACTIVE
 cyclobenzaprine,CNS_ACTIVE
+warfarin,ANTICOAGULANT
+apixaban,ANTICOAGULANT
+rivaroxaban,ANTICOAGULANT
+sertraline,SEROTONERGIC
+citalopram,SEROTONERGIC
+escitalopram,SEROTONERGIC
+fluoxetine,SEROTONERGIC
+duloxetine,SEROTONERGIC
+amitriptyline,SEROTONERGIC
+sumatriptan,SEROTONERGIC
+mirtazapine,SEROTONERGIC
+trazodone,SEROTONERGIC
+cyclobenzaprine,SEROTONERGIC

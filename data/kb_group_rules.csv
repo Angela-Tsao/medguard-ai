@@ -1,3 +1,4 @@
 rule_id,group,min_count,severity,risk_plain_language,source,verified
 R12,ANTICHOLINERGIC,2,Moderate-Major,Two or more strongly anticholinergic medicines raise the risk of confusion and memory problems,AGS Beers Criteria 2023 Table 5,YES
 R21,CNS_ACTIVE,3,Major,Three or more medicines that act on the brain raise the risk of falls and fractures,AGS Beers Criteria 2023 Table 5,YES
+R28,ANTICOAGULANT,2,Major,"Two blood thinners (anticoagulants) taken together sharply raise the risk of serious bleeding. This is usually not intended (for example, an old prescription that was never stopped when a new one started), so a clinician should confirm which one the patient should be taking.","ELIQUIS (apixaban) prescribing information, 5.2 Bleeding: concomitant use of drugs affecting hemostasis, including other anticoagulants, increases the risk of bleeding",PENDING

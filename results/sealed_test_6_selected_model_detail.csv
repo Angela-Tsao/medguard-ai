@@ -1,0 +1,208 @@
+sentence,written,drug,oov,kind,variant,outcome,mapped_to,span_flags,ordinary_auto,ordinary_review,ordinary_words,alert_gold,alert_tp,alert_fp
+1,metformin,metformin,False,in,correct name or listed brand,found and mapped correctly,metformin,1,0,0,,1,1,0
+2,lisinopril,lisinopril,False,in,correct name or listed brand,found and mapped correctly,lisinopril,1,0,0,,1,1,0
+3,levothyroxine,levothyroxine,False,in,correct name or listed brand,found and mapped correctly,levothyroxine,1,0,0,,1,1,0
+4,amox-clav,amoxicillin clavulanate,True,oov,not in our list,sent to review,amoxicillin,1,0,0,,0,0,0
+5,albuterol,albuterol,False,in,correct name or listed brand,found and mapped correctly,albuterol,1,0,0,,0,0,0
+6,ibu,ibuprofen,False,in,brand not in our name list,missed,,0,0,1,one->meclizine,2,0,0
+7,acetaminophen,acetaminophen,False,in,correct name or listed brand,found and mapped correctly,acetaminophen,1,0,0,,1,1,0
+8,atorva,atorvastatin,False,in,brand not in our name list,missed,,0,0,0,,1,0,0
+9,sertraline,sertraline,False,in,correct name or listed brand,found and mapped correctly,sertraline,1,0,0,,2,2,0
+10,hydrochlorothiazide,hydrochlorothiazide,False,in,correct name or listed brand,found and mapped correctly,hydrochlorothiazide,1,0,0,,2,2,0
+11,amoxicillin,amoxicillin,False,in,correct name or listed brand,found and mapped correctly,amoxicillin,1,0,1,liquid->apixaban,1,1,0
+12,omeprazole,omeprazole,False,in,correct name or listed brand,found and mapped correctly,omeprazole,1,0,0,,2,2,0
+13,Xanax,alprazolam,False,in,correct name or listed brand,found and mapped correctly,alprazolam,1,0,0,,2,2,0
+14,warfarin,warfarin,False,in,correct name or listed brand,found and mapped correctly,warfarin,1,0,0,,2,2,0
+15,cetirizine,cetirizine,False,in,correct name or listed brand,found and mapped correctly,cetirizine,1,0,0,,0,0,0
+16,glargine,insulin glargine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+17,donepezil,donepezil,False,in,correct name or listed brand,found and mapped correctly,donepezil,1,0,0,,1,1,0
+18,losartan,losartan,False,in,correct name or listed brand,found and mapped correctly,losartan,1,0,0,,3,1,0
+18,hctz,hydrochlorothiazide,False,in,brand not in our name list,missed,,0,0,0,,0,0,0
+19,mupirocin,mupirocin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+20,concerta,methylphenidate,True,oov,not in our list,missed,,0,0,0,,0,0,0
+21,gabapenten,gabapentin,False,in,brand not in our name list,found and mapped correctly,gabapentin,1,0,0,,1,1,0
+22,pantoprzole,pantoprazole,False,in,brand not in our name list,found and mapped correctly,pantoprazole,1,0,0,,0,0,0
+23,oxycodone,oxycodone,False,in,correct name or listed brand,found and mapped correctly,oxycodone,1,0,0,,1,1,0
+24,ventolin,albuterol,False,in,brand not in our name list,missed,,0,0,0,,0,0,0
+25,clindamycin,clindamycin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+26,prednisolone,prednisolone,True,oov,not in our list,auto-mapped to another drug,prednisone,1,0,0,,0,0,0
+27,metoprolol,metoprolol,False,in,correct name or listed brand,found and mapped correctly,metoprolol,1,0,0,,1,1,0
+28,propranolol,propranolol,True,oov,not in our list,sent to review,metoprolol,1,0,0,,0,0,0
+28,pravastatin,pravastatin,False,in,correct name or listed brand,found and mapped correctly,pravastatin,1,0,0,,0,0,0
+29,Pepto,bismuth subsalicylate,True,oov,not in our list,missed,,0,1,0,tacos->pioglitazone,0,0,0
+30,fluox,fluoxetine,False,in,brand not in our name list,found and mapped correctly,"fluoxetine, tamsulosin",2,0,0,,0,0,0
+31,furosemid,furosemide,False,in,brand not in our name list,found and mapped correctly,furosemide,1,0,0,,1,1,0
+32,escitalopram,escitalopram,False,in,correct name or listed brand,found and mapped correctly,escitalopram,1,0,0,,0,0,0
+33,diclofenac,diclofenac,True,oov,not in our list,missed,,0,0,0,,0,0,0
+34,Norvasc,amlodipine,False,in,correct name or listed brand,found and mapped correctly,amlodipine,2,0,0,,1,1,0
+35,,(no medication),False,none,none,none,,0,0,0,,0,0,0
+36,Aleve,naproxen,False,in,correct name or listed brand,found and mapped correctly,naproxen,1,0,0,,2,2,0
+37,doxycycline,doxycycline,False,in,correct name or listed brand,found and mapped correctly,doxycycline,1,0,0,,1,1,0
+38,z-pack,azithromycin,False,in,dropped letters / sound spelling,missed,,0,0,0,,1,0,0
+39,ondansetron,ondansetron,True,oov,not in our list,missed,,0,0,0,,0,0,0
+40,tylenol,acetaminophen,False,in,correct name or listed brand,found and mapped correctly,acetaminophen,1,0,0,,1,1,0
+41,cephalexin,cephalexin,False,in,correct name or listed brand,found and mapped correctly,cephalexin,1,0,0,,1,1,0
+42,namenda,memantine,False,in,correct name or listed brand,found and mapped correctly,memantine,1,0,0,,0,0,0
+43,flonase,fluticasone,True,oov,not in our list,missed,,0,0,0,,0,0,0
+44,simvustatin,simvastatin,False,in,brand not in our name list,found and mapped correctly,simvastatin,1,0,0,,0,0,0
+45,aspirin,aspirin,False,in,correct name or listed brand,found and mapped correctly,aspirin,1,0,0,,2,2,0
+46,metformins,metformin,False,in,brand not in our name list,found and mapped correctly,metformin,1,0,0,,1,1,0
+47,buspirone,buspirone,True,oov,not in our list,sent to review,ibuprofen,1,0,0,,0,0,0
+48,ibuprofen,ibuprofen,False,in,correct name or listed brand,found and mapped correctly,ibuprofen,1,0,0,,2,2,0
+49,trazodone,trazodone,False,in,correct name or listed brand,found and mapped correctly,trazodone,1,0,0,,1,1,0
+50,spironolactone,spironolactone,False,in,correct name or listed brand,found and mapped correctly,spironolactone,1,0,0,,1,1,0
+51,Bactrim,sulfamethoxazole-trimethoprim,False,in,correct name or listed brand,found and mapped correctly,sulfamethoxazole-trimethoprim,1,0,0,,0,0,0
+52,symbicort,budesonide formoterol,True,oov,not in our list,missed,,0,0,0,,0,0,0
+53,Eliquis,apixaban,False,in,correct name or listed brand,found and mapped correctly,apixaban,1,0,0,,1,1,0
+54,carbidopa-levodopa,carbidopa levodopa,True,oov,not in our list,missed,,0,0,1,noon->hydrocodone,0,0,0
+55,sumatriptin,sumatriptan,False,in,brand not in our name list,found and mapped correctly,sumatriptan,1,0,1,migraine->mirtazapine,0,0,0
+56,clonazepam,clonazepam,False,in,correct name or listed brand,found and mapped correctly,clonazepam,1,0,0,,0,0,0
+57,insulin lispro,insulin lispro,True,oov,not in our list,missed,,0,0,0,,0,0,0
+58,nystatin,nystatin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+59,tamsulosin,tamsulosin,False,in,correct name or listed brand,found and mapped correctly,tamsulosin,1,0,0,,1,1,0
+60,rivaroxa-ban,rivaroxaban,False,in,dropped letters / sound spelling,found and mapped correctly,rivaroxaban,1,0,0,,2,2,0
+61,diphenhydramine,diphenhydramine,False,in,correct name or listed brand,found and mapped correctly,diphenhydramine,1,0,0,,2,2,0
+62,amitriptyline,amitriptyline,False,in,correct name or listed brand,found and mapped correctly,amitriptyline,1,0,0,,2,2,0
+63,,(no medication),False,none,none,none,,0,0,0,,0,0,0
+64,carvedilol,carvedilol,False,in,correct name or listed brand,found and mapped correctly,carvedilol,1,0,0,,0,0,0
+65,triamcino,triamcinolone,True,oov,not in our list,missed,,0,0,0,,0,0,0
+66,azithro,azithromycin,False,in,brand not in our name list,sent to review,azithromycin,1,0,0,,1,0,0
+67,finasteride,finasteride,False,in,correct name or listed brand,found and mapped correctly,finasteride,1,0,0,,0,0,0
+68,nicotine,nicotine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+69,latanoprost,latanoprost,True,oov,not in our list,missed,,0,0,0,,0,0,0
+70,quetiapine,quetiapine,False,in,correct name or listed brand,found and mapped correctly,quetiapine,1,0,0,,0,0,0
+71,Advil,ibuprofen,False,in,correct name or listed brand,found and mapped correctly,ibuprofen,1,0,0,,2,2,0
+72,,(no medication),False,none,none,none,,0,0,0,,0,0,0
+73,venlafaxine,venlafaxine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+74,enalapril,enalapril,True,oov,not in our list,missed,,0,0,0,,0,0,0
+74,valsartan,valsartan,False,in,correct name or listed brand,found and mapped correctly,valsartan,1,0,0,,0,0,0
+75,oxybutynin,oxybutynin,False,in,correct name or listed brand,found and mapped correctly,oxybutynin,1,0,0,,2,2,0
+76,polyethylene glycol,polyethylene glycol,True,oov,not in our list,missed,,0,0,0,,0,0,0
+77,plavix,clopidogrel,False,in,correct name or listed brand,found and mapped correctly,clopidogrel,1,0,0,,1,1,0
+78,codeine,codeine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+79,lorazepam,lorazepam,False,in,correct name or listed brand,found and mapped correctly,lorazepam,1,0,0,,2,2,0
+80,norgestimate,norgestimate ethinyl estradiol,True,oov,not in our list,missed,,0,0,1,control->glipizide,0,0,0
+81,allopurinal,allopurinol,False,in,brand not in our name list,found and mapped correctly,allopurinol,1,0,0,,0,0,0
+82,miralax,polyethylene glycol,True,oov,not in our list,sent to review,risperidone,1,0,0,,0,0,0
+83,Wellbutrin,bupropion,False,in,correct name or listed brand,found and mapped correctly,bupropion,1,0,0,,0,0,0
+84,apixaban,apixaban,False,in,correct name or listed brand,found and mapped correctly,apixaban,1,0,0,,1,1,0
+85,potassium chloride,potassium chloride,True,oov,not in our list,missed,,0,0,0,,0,0,0
+86,prednisone,prednisone,False,in,correct name or listed brand,found and mapped correctly,prednisone,1,0,0,,0,0,0
+87,epipen,epinephrine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+88,ropinerole,ropinirole,False,in,brand not in our name list,found and mapped correctly,ropinirole,1,0,0,,0,0,0
+89,flagyl,metronidazole,True,oov,not in our list,missed,,0,0,0,,0,0,0
+90,cipro,ciprofloxacin,False,in,correct name or listed brand,found and mapped correctly,ciprofloxacin,1,0,0,,0,0,0
+91,alendronate,alendronate,False,in,correct name or listed brand,found and mapped correctly,alendronate,1,0,0,,0,0,0
+92,montelukast,montelukast,False,in,correct name or listed brand,found and mapped correctly,montelukast,1,0,0,,0,0,0
+93,Lasix,furosemide,False,in,correct name or listed brand,found and mapped correctly,furosemide,1,0,0,,1,1,0
+94,estradiol,estradiol,True,oov,not in our list,sent to review,lisinopril,1,0,0,,0,0,0
+95,duloxetine,duloxetine,False,in,correct name or listed brand,found and mapped correctly,duloxetine,1,0,0,,0,0,0
+96,Januvia,sitagliptin,False,in,correct name or listed brand,found and mapped correctly,sitagliptin,1,0,0,,0,0,0
+97,albuteral,albuterol,False,in,brand not in our name list,found and mapped correctly,albuterol,1,0,0,,0,0,0
+98,famotidine,famotidine,False,in,correct name or listed brand,found and mapped correctly,famotidine,1,0,0,,0,0,0
+99,naproxen,naproxen,False,in,correct name or listed brand,found and mapped correctly,naproxen,1,0,0,,2,2,0
+100,morphine,morphine,False,in,correct name or listed brand,found and mapped correctly,morphine,1,0,0,,0,0,0
+101,methylphenidate,methylphenidate,True,oov,not in our list,missed,,0,0,0,,0,0,0
+102,tacrolimus,tacrolimus,True,oov,not in our list,missed,,0,0,0,,0,0,0
+103,meclizine,meclizine,False,in,correct name or listed brand,found and mapped correctly,meclizine,1,0,0,,2,2,0
+104,clonidine,clonidine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+105,glipizide,glipizide,False,in,correct name or listed brand,found and mapped correctly,glipizide,1,0,0,,2,2,0
+106,acyclovir,acyclovir,True,oov,not in our list,missed,,0,0,0,,0,0,0
+107,colchicine,colchicine,False,in,correct name or listed brand,found and mapped correctly,colchicine,1,0,0,,0,0,0
+108,ketorolac,ketorolac,True,oov,not in our list,sent to review,metoprolol,1,0,0,,0,0,0
+109,adapalene,adapalene,True,oov,not in our list,missed,,0,0,0,,0,0,0
+109,benzoyl,benzoyl peroxide,True,oov,not in our list,missed,,0,0,0,,0,0,0
+110,nexium,esomeprazole,True,oov,not in our list,missed,,0,0,0,,0,0,0
+111,hctz,hydrochlorothiazide,False,in,brand not in our name list,missed,,0,0,0,,3,1,0
+111,synthroid,levothyroxine,False,in,correct name or listed brand,found and mapped correctly,levothyroxine,1,0,0,,0,0,0
+112,amlodopine,amlodipine,False,in,brand not in our name list,found and mapped correctly,amlodipine,1,0,0,,1,1,0
+113,bupro,bupropion,False,in,brand not in our name list,missed,,0,0,0,,0,0,0
+114,clotrimazole,clotrimazole,True,oov,not in our list,sent to review,omeprazole,1,0,0,,0,0,0
+115,semaglutide,semaglutide,True,oov,not in our list,missed,,0,0,0,,0,0,0
+116,meloxicam,meloxicam,False,in,correct name or listed brand,found and mapped correctly,meloxicam,1,0,0,,0,0,0
+117,nicotine,nicotine,True,oov,not in our list,missed,,0,0,1,one->meclizine,0,0,0
+118,lithium,lithium,True,oov,not in our list,missed,,0,0,0,,0,0,0
+119,azelastine,azelastine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+120,hydroxyzine,hydroxyzine,False,in,correct name or listed brand,found and mapped correctly,hydroxyzine,1,0,0,,2,2,0
+121,lisinipril,lisinopril,False,in,brand not in our name list,found and mapped correctly,lisinopril,1,0,0,,1,1,0
+122,Tylenol,acetaminophen,False,in,correct name or listed brand,found and mapped correctly,acetaminophen,1,0,0,,1,1,0
+123,metformin,metformin,False,in,correct name or listed brand,found and mapped correctly,metformin,1,0,1,diarrhea->glyburide,1,1,0
+124,celexa,citalopram,False,in,correct name or listed brand,found and mapped correctly,citalopram,1,0,0,,0,0,0
+125,brimonidine,brimonidine,True,oov,not in our list,sent to review,meclizine,1,0,0,,0,0,0
+126,cefdinir,cefdinir,True,oov,not in our list,missed,,0,0,0,,0,0,0
+127,famotidine,famotidine,False,in,correct name or listed brand,found and mapped correctly,famotidine,1,0,0,,0,0,0
+128,lactulose,lactulose,True,oov,not in our list,sent to review,pioglitazone,1,0,0,,0,0,0
+129,ondansatron,ondansetron,True,oov,not in our list,missed,,0,0,0,,0,0,0
+130,fluticasone,fluticasone,True,oov,not in our list,missed,,0,0,0,,0,0,0
+131,atenolol,atenolol,False,in,correct name or listed brand,found and mapped correctly,atenolol,1,0,0,,0,0,0
+132,rosuvastatin,rosuvastatin,False,in,correct name or listed brand,found and mapped correctly,rosuvastatin,1,0,0,,0,0,0
+133,lamotrigine,lamotrigine,True,oov,not in our list,sent to review,famotidine,1,0,0,,0,0,0
+134,zolpidem,zolpidem,False,in,correct name or listed brand,found and mapped correctly,zolpidem,1,0,0,,2,2,0
+135,rivastigmine,rivastigmine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+136,clobetasol,clobetasol,True,oov,not in our list,missed,,0,0,0,,0,0,0
+137,loperamide,loperamide,True,oov,not in our list,missed,,0,0,0,,0,0,0
+138,linezolid,linezolid,True,oov,not in our list,missed,,0,0,0,,0,0,0
+139,propranolol,propranolol,True,oov,not in our list,sent to review,metoprolol,1,0,0,,0,0,0
+140,nitroglycerin,nitroglycerin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+141,erythromycin,erythromycin,True,oov,not in our list,sent to review,clarithromycin,1,0,0,,0,0,0
+142,atrovent,ipratropium,True,oov,not in our list,missed,,0,0,0,,0,0,0
+143,metoclopramide,metoclopramide,True,oov,not in our list,missed,,0,0,0,,0,0,0
+144,ferrous sulfate,ferrous sulfate,True,oov,not in our list,missed,,0,0,0,,0,0,0
+145,cyclobenzaprine,cyclobenzaprine,False,in,correct name or listed brand,found and mapped correctly,cyclobenzaprine,1,0,0,,2,2,0
+146,senna,senna,True,oov,not in our list,missed,,0,0,1,warm->warfarin,0,0,0
+147,mesalamine,mesalamine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+148,tacro,tacrolimus,True,oov,not in our list,missed,,0,0,0,,0,0,0
+149,pregabalin,pregabalin,False,in,correct name or listed brand,found and mapped correctly,pregabalin,1,0,0,,0,0,0
+150,ramipril,ramipril,True,oov,not in our list,missed,,0,0,0,,0,0,0
+150,ramelteon,ramelteon,True,oov,not in our list,sent to review,rivaroxaban,1,0,0,,0,0,0
+151,moxifloxacin,moxifloxacin,True,oov,not in our list,sent to review,ciprofloxacin,1,0,0,,0,0,0
+152,,(no medication),False,none,none,none,,0,0,0,,0,0,0
+153,prednisone,prednisone,False,in,correct name or listed brand,found and mapped correctly,prednisone,1,0,0,,0,0,0
+154,doxy,doxycycline,False,in,brand not in our name list,missed,,0,0,0,,1,0,0
+155,metoprolol,metoprolol,False,in,correct name or listed brand,found and mapped correctly,metoprolol,1,0,0,,1,1,0
+156,ketoconazole,ketoconazole,True,oov,not in our list,missed,,0,0,0,,0,0,0
+157,ubrelvy,ubrogepant,True,oov,not in our list,missed,,0,0,0,,0,0,0
+158,paroxetine,paroxetine,True,oov,not in our list,sent to review,fluoxetine,1,0,0,,0,0,0
+159,guaifenesin,guaifenesin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+160,furosemide,furosemide,False,in,correct name or listed brand,found and mapped correctly,furosemide,1,0,0,,1,1,0
+161,enoxaparin,enoxaparin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+162,finas-teride,finasteride,False,in,dropped letters / sound spelling,found and mapped correctly,finasteride,1,0,0,,0,0,0
+163,clopidogrel,clopidogrel,False,in,correct name or listed brand,found and mapped correctly,clopidogrel,1,0,0,,1,1,0
+164,trelegy,fluticasone umeclidinium vilanterol,True,oov,not in our list,missed,,0,0,0,,0,0,0
+165,permethrin,permethrin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+166,keppra,levetiracetam,False,in,correct name or listed brand,found and mapped correctly,levetiracetam,1,0,0,,0,0,0
+167,metformin,metformin,False,in,correct name or listed brand,found and mapped correctly,metformin,1,0,0,,1,1,0
+168,amoxil,amoxicillin,False,in,correct name or listed brand,found and mapped correctly,amoxicillin,1,0,0,,1,1,0
+169,losar tan,losartan,False,in,split by a space,sent to review,losartan,1,0,0,,1,0,0
+170,memantine,memantine,False,in,correct name or listed brand,found and mapped correctly,memantine,1,0,0,,0,0,0
+171,lidocaine,lidocaine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+172,famciclovir,famciclovir,True,oov,not in our list,missed,,0,0,0,,0,0,0
+173,Qvar,beclomethasone,True,oov,not in our list,missed,,0,0,1,one->meclizine,0,0,0
+174,Tylenol,acetaminophen,False,in,correct name or listed brand,found and mapped correctly,acetaminophen,1,0,0,,1,1,0
+175,cefalexin,cephalexin,False,in,brand not in our name list,found and mapped correctly,cephalexin,1,0,0,,1,1,0
+176,pradaxa,dabigatran,True,oov,not in our list,sent to review,nifedipine,1,0,0,,0,0,0
+177,mupirocin,mupirocin,True,oov,not in our list,missed,,0,0,0,,0,0,0
+178,acetazolamide,acetazolamide,True,oov,not in our list,sent to review,acetaminophen,1,0,0,,0,0,0
+179,trazadone,trazodone,False,in,brand not in our name list,found and mapped correctly,trazodone,1,0,0,,3,3,0
+179,tramadol,tramadol,False,in,correct name or listed brand,found and mapped correctly,tramadol,1,0,0,,0,0,0
+180,amio,amiodarone,False,in,brand not in our name list,missed,,0,0,0,,1,0,0
+181,insulin,insulin NPH,True,oov,not in our list,missed,,0,0,0,,0,0,0
+182,hydrocortisone,hydrocortisone,True,oov,not in our list,auto-mapped to another drug,hydrocodone,1,0,0,,0,0,0
+183,aspirin,aspirin,False,in,correct name or listed brand,found and mapped correctly,aspirin,1,0,0,,2,2,0
+184,metFORMIN,metformin,False,in,correct name or listed brand,found and mapped correctly,metformin,1,0,0,,1,1,0
+185,budesonide,budesonide,True,oov,not in our list,missed,,0,0,0,,0,0,0
+186,prolia,denosumab,True,oov,not in our list,missed,,0,0,0,,0,0,0
+187,benzonatate,benzonatate,True,oov,not in our list,missed,,0,0,0,,0,0,0
+188,escitalopram,escitalopram,False,in,correct name or listed brand,found and mapped correctly,escitalopram,1,0,0,,0,0,0
+189,fluticazone,fluticasone,True,oov,not in our list,sent to review,fluoxetine,1,0,0,,0,0,0
+190,pantoprazole,pantoprazole,False,in,correct name or listed brand,found and mapped correctly,pantoprazole,1,0,0,,0,0,0
+191,diclofinac,diclofenac,True,oov,not in our list,missed,,0,0,0,,0,0,0
+192,entacapone,entacapone,True,oov,not in our list,missed,,0,0,0,,0,0,0
+193,,(no medication),False,none,none,none,,0,0,1,birth-control->glipizide,0,0,0
+194,metformin,metformin,False,in,correct name or listed brand,found and mapped correctly,metformin,1,0,0,,1,1,0
+195,Aimovig,erenumab,True,oov,not in our list,missed,,0,0,1,cousin->warfarin,0,0,0
+196,macrobid,nitrofurantoin,False,in,correct name or listed brand,found and mapped correctly,nitrofurantoin,1,0,0,,2,2,0
+197,nortrip,nortriptyline,True,oov,not in our list,missed,,0,0,0,,0,0,0
+198,venlafaxine,venlafaxine,True,oov,not in our list,missed,,0,0,0,,0,0,0
+199,mometasone,mometasone,True,oov,not in our list,missed,,0,0,0,,0,0,0
+200,mycophenolate,mycophenolate,True,oov,not in our list,missed,,0,0,0,,0,0,0

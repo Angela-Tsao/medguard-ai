@@ -1,7 +1,7 @@
-method,in_dict_mentions,found_and_mapped_correctly,fm_lo,fm_hi,found_any,sent_to_review,mapped_wrong,missed,precision,prec_lo,prec_hi,ordinary_word_auto_mapped,ordinary_word_to_review,oov_mentions,oov_auto_mapped_wrong,oov_to_review,oov_missed,alerts_expected,alerts_found,wrong_alerts
-Exact match (baseline),149,1.0,1.0,1.0,1.0,0,0,0,1.0,1.0,1.0,0,0,103,0,0,103,142,142,0
-Fuzzy match (baseline),149,1.0,1.0,1.0,1.0,0,0,0,0.7072072072072072,0.6531531531531531,0.7607681506136883,0,65,103,3,5,95,142,142,2
-Logistic regression (selected),149,1.0,1.0,1.0,1.0,0,0,0,0.9476744186046512,0.9117570465686274,0.9770147783251232,0,9,103,3,11,89,142,142,2
-Logistic regression + context,149,0.9932885906040269,0.978098164448261,1.0,0.9932885906040269,0,0,1,0.8622047244094488,0.8233078932270436,0.8996138996138996,0,35,103,3,68,32,142,140,2
-Random forest,149,1.0,1.0,1.0,1.0,0,0,0,0.9161676646706587,0.875796568627451,0.9530250402292083,0,14,103,3,1,99,142,142,2
-Gradient boosting,149,1.0,1.0,1.0,1.0,0,0,0,0.7050691244239631,0.6473222109875295,0.7636631016042781,0,64,103,3,1,99,142,142,2
+method,in_dict_mentions,found_and_mapped_correctly,fm_lo,fm_hi,found_any,misspelled_mentions,misspelled_found_correctly,sent_to_review,mapped_wrong,missed,precision,prec_lo,prec_hi,ordinary_word_auto_mapped,ordinary_word_to_review,oov_mentions,oov_auto_mapped_wrong,oov_to_review,oov_missed,alerts_expected,alerts_found,wrong_alerts
+Exact match (baseline),149,1.0,1.0,1.0,1.0,0,,0,0,0,1.0,1.0,1.0,0,0,103,0,0,103,142,142,0
+Fuzzy match (baseline),149,1.0,1.0,1.0,1.0,0,,0,0,0,0.7072072072072072,0.6531531531531531,0.7607681506136883,0,65,103,3,5,95,142,142,2
+Logistic regression (selected),149,1.0,1.0,1.0,1.0,0,,0,0,0,0.9476744186046512,0.9117570465686274,0.9770147783251232,0,9,103,3,11,89,142,142,2
+Logistic regression + context,149,0.9932885906040269,0.978098164448261,1.0,0.9932885906040269,0,,0,0,1,0.8622047244094488,0.8233078932270436,0.8996138996138996,0,35,103,3,68,32,142,140,2
+Random forest,149,1.0,1.0,1.0,1.0,0,,0,0,0,0.9161676646706587,0.875796568627451,0.9530250402292083,0,14,103,3,1,99,142,142,2
+Gradient boosting,149,1.0,1.0,1.0,1.0,0,,0,0,0,0.7050691244239631,0.6473222109875295,0.7636631016042781,0,64,103,3,1,99,142,142,2

@@ -56,6 +56,7 @@ _PATHS = {
     "help": '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5 C9.5 7.5 14.5 7.5 14.5 10 C14.5 11.5 12 12 12 13.5"/><circle cx="12" cy="16.6" r="0.6" fill="currentColor"/>',
     "search": '<circle cx="11" cy="11" r="6.5"/><line x1="16" y1="16" x2="20.5" y2="20.5"/>',
     "x": '<circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/>',
+    "file-text": '<path d="M6 3 H14 L19 8 V21 H6 Z"/><path d="M14 3 V8 H19"/><line x1="9" y1="12" x2="16" y2="12"/><line x1="9" y1="15.5" x2="16" y2="15.5"/>',
 }
 
 def line_icon(name, size=20, color=INK2):
@@ -89,11 +90,11 @@ def med_card(token, canon, status, extra=""):
 # Each alert type keeps its own label, colour AND shape so meaning never relies on colour alone.
 ALERT_STYLE = {
     "Drug interaction": {"label": "Interaction", "color": "#B91C1C", "bg": "#FEF2F2", "icon": "alert",
-                         "title": "Medications that may not mix well"},
+                         "title": "Possible interactions for your clinician to review"},
     "Older-adult caution (Beers)": {"label": "Older-adult caution", "color": "#B45309", "bg": "#FFFBEB", "icon": "octagon",
-                                    "title": "Extra caution after age 65"},
+                                    "title": "Older-adult cautions for your clinician to review"},
     "Side effects to watch": {"label": "Side effects", "color": "#1D4ED8", "bg": "#EFF6FF", "icon": "info",
-                              "title": "Side effects to watch for"},
+                              "title": "Side effects to mention to your clinician"},
 }
 SEVERITY = ALERT_STYLE  # backwards-compatible name
 
@@ -220,6 +221,9 @@ label, [data-testid="stWidgetLabel"] p { color: var(--ink) !important; font-weig
 /* panels, tiles, steps */
 .mg-panel { border:1px solid var(--line); border-radius:16px; padding:16px 18px; background:#fff; box-shadow: var(--shadow); margin-bottom:12px; color: var(--ink); line-height:1.55; }
 .mg-panel-h { display:flex; align-items:center; gap:8px; font-weight:700; font-size:1.02rem; color:var(--ink); margin-bottom:8px; }
+.mg-orig { font-size:1rem; line-height:1.7; background:#F9FAFB; border:1px solid #E5E7EB; border-radius:10px; padding:12px 14px; white-space:pre-wrap; }
+mark.mg-hl-ok { background:#D1FAE5; color:#065F46; border-radius:4px; padding:0 3px; }
+mark.mg-hl-rev { background:#FEF3C7; color:#92400E; border-radius:4px; padding:0 3px; }
 .mg-q { display:flex; gap:10px; padding:8px 0; border-top:1px solid #F3F4F6; font-size:0.94rem; }
 .mg-q:first-of-type { border-top:none; }
 .mg-q b { color: var(--accent); min-width: 18px; }

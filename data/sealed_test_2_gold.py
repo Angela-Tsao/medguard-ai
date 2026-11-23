@@ -1,0 +1,36 @@
+# Hand-labelled medication mentions for test set 2 (ML_test.docx, Nov 22: messier rewrite of test 1).
+# "surface|canonical" marks a misspelling and its intended dictionary drug; plain surfaces are looked up as written.
+GOLD = [
+["lisinopril","atorvastain|atorvastatin"],["Tylenol","advill|ibuprofen"],["Metformin","Januvia"],["Claritin","flonase"],["levothyroxin|levothyroxine"],
+["Zoloft","trazadone|trazodone"],["Pepto","amoxicilin|amoxicillin"],["Mucinex","sudafed"],["Eliquis","metoprolol"],["omeprazol|omeprazole","Pepcid"],
+["ibuprofin|ibuprofen"],["Motrin","tylenol"],["gabapentin","cyclobenzaprine"],["Benadryl","zyrtec"],["prednisone"],
+["Advil","aleve"],["Xanax","Oxycontin"],["Viagra","nitroglycerin"],["warfarin","aspirin"],["Prozac","tramadol"],
+["Nyquil","Tylenol","acetaminophen"],["Lipitor","Paxlovid"],["Adderall","Sudafed"],["Ambien","benadryl"],["Lisinopril","losartan"],
+["Cipro","Tums"],["Flexeril","Valium"],["Wellbutrin","Nardil"],["spironolactone"],["Plavix","Prilosec"],
+[],["Dayquil"],["doxycyclin|doxycycline"],["Lexapro"],["Excedrin","Zoloft"],
+["acetominophen|acetaminophen"],["Synthroid"],["Zocor"],["ibprofen|ibuprofen","lisinopril"],["Percocet"],
+["aspirin","Advil"],[],["Imodium","Zofran"],["Robitussin"],["Toradol","advil"],
+[],["amlodipine","Simvastatin"],["Klonopin","gabapentin"],["diphenhydramine"],["Eliquis","Lipitor","Paxlovid"],
+["Losartan","HCTZ"],["Crestor","Mylanta"],["Augmentin"],["Allegra"],["Lamictal"],
+["Effexor","Motrin"],["Xarelto"],["metoprolol","amlodapine|amlodipine"],["Lantus","Metformin"],["Ozempic","glipizide"],
+["Jardiance","Lasix"],["Lasix","Klor-Con"],["digoxin"],["allopurinol","amoxicillin"],["colchicine","clarithromycin"],
+["Celebrex","Advil","aspirin"],["meloxicam","Excedrin"],["Naproxen","Toradol"],["tramadol","Benadryl"],["Norco","Tylenol","acetaminophen"],
+["Suboxone"],["naltrexone","codeine"],["Buspar"],["Cymbalta","Imitrex"],["Imitrex"],
+["Nurtec","ketoconazole"],["Topamax"],["Keppra"],["Dilantin"],["Tegretol"],
+["lithium","ibuprofin|ibuprofen"],["Seroquel"],["Abilify","Zoloft"],["Vyvanse","Alka-Seltzer","Tums"],["Ritalin","Sudafed"],
+["Strattera"],["Flomax","Viagra"],["finasteride"],["pantoprazole"],["Nexium"],
+["Carafate"],["Zofran"],["Reglan"],["Miralax"],["Colace","Percocet"],
+["Synthroid"],["Cipro"],["doxycycline"],["aspirin"],["Pravastatin"],
+["Eliquis"],["Valtrex","Lisinopril"],["Tamiflu","Tylenol"],["Diflucan","Simvastatin"],["Flagyl"],
+["Bactrim"],["Keflex","Claritin"],["Z-Pak","azithromycin","Maalox"],["clindamycin","Imodium"],["Macrobid","levothyroxine"],
+["Azo"],["Singulair","Symbicort"],["albuterol","propranolol"],["propranolol","amlodipine"],["atenolol","Afrin"],
+["diltiazem","lovastatin"],["verapamil","metoprolol"],["Coreg","lisinopril"],["Entresto","lisinopril"],["isosorbide","Cialis"],
+["amiodarone","warfarin"],["Tikosyn","HCTZ"],["Brilinta","aspirin"],[],["Fosamax"],
+["methotrexate","Bactrim"],["Humira","methotrexate"],["Plaquenil"],["Imuran","allopurinol"],["tacrolimus"],
+["cyclosporine"],["tamoxifen","Paxil","Prozac"],["anastrozole"],["Xyzal","Benadryl"],["Afrin","Claritin-D"],
+["Theraflu","Tylenol"],["Alka-Seltzer","aspirin"],["Mucinex","Mucinex"],["Dramamine","Benadryl"],["Bonine","Robaxin"],
+["Robaxin","Ativan"],["Ativan","Percocet"],["Restoril","codeine"],["Lunesta","trazodone"],["Belsomra","itraconazole"],
+["Chantix","lisinopril"],["Ambien"],["Accutane","doxycycline"],["spironolactone"],[],
+]
+from sealed_test_1_gold import NEUTRAL as _N
+NEUTRAL = set(_N) | {"er","xr","xl","pe","d3","vit","bismol","johns","ir","cr","sr","iu","mcg","units","ssri","maois"}

@@ -1,0 +1,7 @@
+method,in_dict_mentions,found_and_mapped_correctly,fm_lo,fm_hi,found_any,misspelled_mentions,misspelled_found_correctly,sent_to_review,mapped_wrong,missed,precision,prec_lo,prec_hi,ordinary_word_auto_mapped,ordinary_word_to_review,oov_mentions,oov_auto_mapped_wrong,oov_to_review,oov_missed,alerts_expected,alerts_found,wrong_alerts
+Exact match (baseline),146,0.9178082191780822,0.8730025567273889,0.9571504559270517,0.9178082191780822,12,0.0,0,0,12,1.0,1.0,1.0,0,0,101,0,0,101,149,131,0
+Fuzzy match (baseline),146,1.0,1.0,1.0,1.0,12,1.0,0,0,0,0.842391304347826,0.7930945149187065,0.888354320329809,0,29,101,4,5,92,149,149,3
+Logistic regression (selected),146,1.0,1.0,1.0,1.0,12,1.0,0,0,0,0.9775280898876404,0.9540066106842952,0.9945945945945946,0,4,101,4,24,73,149,149,3
+Logistic regression + context,146,1.0,1.0,1.0,1.0,12,1.0,0,0,0,0.8653846153846154,0.8301036751036751,0.9,0,35,101,3,76,22,149,149,2
+Random forest,146,1.0,1.0,1.0,1.0,12,1.0,0,0,0,0.9681528662420382,0.9393727780599289,0.9931529988893002,0,5,101,4,2,95,149,149,3
+Gradient boosting,146,1.0,1.0,1.0,1.0,12,1.0,0,0,0,0.7936507936507936,0.7417376017764619,0.8421337126600283,0,39,101,3,1,97,149,149,2

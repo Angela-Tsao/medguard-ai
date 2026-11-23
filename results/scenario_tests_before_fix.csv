@@ -1,0 +1,12 @@
+id,source,input,pass,problem
+S1,teammate live test (Nov 22),"warfrin 5mg every night, eliquis 5 mg twice a day, and advil for my knee",False,missing alert: apixaban + warfarin
+S2,teammate live test (Nov 22),"Toradol after the dentist, and lisinopril 10",False,not listed as Not assessed: ketorolac; wrongly shows: tramadol
+S3,teammate live test (Nov 22),I take Tylenol PM at night and metformin,False,missing alert: diphenhydramine
+S4,teammate live test (Nov 22),"Home visit: client takes Zolpidem10mg, sertraline, gabapentin 300mg, tramadol and oxybutynin.",False,missing alert: sertraline + tramadol
+S5,unknown-drug follow-up,She started Xeljanz last month and still takes her lisinopril.,False,silently dropped: Xeljanz
+S6,look-alike follow-up,"Uses hydrocortisone cream on her rash, takes lisinopril",False,not listed as Not assessed: hydrocortisone; wrongly shows: hydrocodone
+S7,stress test 6 follow-up,Takes Ozempic on Fridays and metformin daily,False,not listed as Not assessed: semaglutide
+S8,v3 live test (Nov 13),I take my vitamins every morning with lisinopril,True,
+S9,v5 teammate test (Nov 21),Doctor gave him amoxicillin; he is on warfarin,True,
+S10,core rule,Advil for back pain and warfarin daily,True,
+S11,core rule,Benadryl at night to sleep,True,

@@ -1,0 +1,12 @@
+id,source,input,must_alert,must_not_assessed,must_not_contain,must_unrecognized,why_it_matters
+S1,teammate live test (Nov 22),"warfrin 5mg every night, eliquis 5 mg twice a day, and advil for my knee",apixaban + warfarin,,,,Two blood thinners at once is one of the riskiest combinations; often an old prescription never stopped
+S2,teammate live test (Nov 22),"Toradol after the dentist, and lisinopril 10",,ketorolac,tramadol,,An unknown drug must never disappear or be swapped for a look-alike (Toradol is ketorolac; tramadol is a different drug)
+S3,teammate live test (Nov 22),I take Tylenol PM at night and metformin,diphenhydramine,,,,The hidden sleep aid in PM products is on the Beers list for older adults
+S4,teammate live test (Nov 22),"Home visit: client takes Zolpidem10mg, sertraline, gabapentin 300mg, tramadol and oxybutynin.",sertraline + tramadol,,,,Our own demo example; tramadol label warns of serotonin syndrome with SSRIs
+S5,unknown-drug follow-up,She started Xeljanz last month and still takes her lisinopril.,,,,Xeljanz,A drug on no list must still reach the clinician as Not assessed
+S6,look-alike follow-up,"Uses hydrocortisone cream on her rash, takes lisinopril",,hydrocortisone,hydrocodone,,Hydrocortisone (steroid cream) must not become hydrocodone (opioid)
+S7,stress test 6 follow-up,Takes Ozempic on Fridays and metformin daily,,semaglutide,,,A common drug outside our rule set should be named and marked Not assessed
+S8,v3 live test (Nov 13),I take my vitamins every morning with lisinopril,,,hydroxyzine;ibuprofen,,"Everyday words (vitamins, morning) must not be mapped to drugs"
+S9,v5 teammate test (Nov 21),Doctor gave him amoxicillin; he is on warfarin,amoxicillin + warfarin,,,,Antibiotic started on top of a blood thinner
+S10,core rule,Advil for back pain and warfarin daily,ibuprofen + warfarin,,,,Classic NSAID + anticoagulant bleeding risk
+S11,core rule,Benadryl at night to sleep,diphenhydramine,,,,Beers: strongly anticholinergic sleep aid

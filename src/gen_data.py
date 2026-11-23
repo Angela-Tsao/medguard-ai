@@ -16,7 +16,9 @@ TOKEN_RE = re.compile(r"[A-Za-z0-9\-]+|[^\sA-Za-z0-9]")
 def tokenize(text):
     return TOKEN_RE.findall(text)
 
-vocab = pd.read_csv(DATA / "drug_vocab.csv")
+# Frozen copy of the drug list as it was when the training data was generated (Nov 12). Names added later
+# (e.g. the brand Microzide) live only in drug_vocab.csv, so regenerating reproduces the data exactly.
+vocab = pd.read_csv(DATA / "drug_vocab_training.csv")
 ALL_NAMES = set(vocab["name"].str.lower())
 by_drug = {c: g for c, g in vocab.groupby("canonical")}
 

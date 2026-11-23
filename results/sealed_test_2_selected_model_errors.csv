@@ -1,0 +1,5 @@
+sentence,token,mapped_to,similarity,kind
+45,Toradol,tramadol,80.0,OOV drug auto-mapped to a different drug
+68,Toradol,tramadol,80.0,OOV drug auto-mapped to a different drug
+116,lovastatin,atorvastatin,81.81818181818181,OOV drug auto-mapped to a different drug
+135,Claritin-D,loratadine,88.88888888888889,OOV drug auto-mapped to a different drug

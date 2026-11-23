@@ -8,7 +8,7 @@ import streamlit as st
 
 ROOT = Path(__file__).parent
 sys.path.insert(0, str(ROOT / "src"))
-from pipeline import detect, check, METHODS
+from pipeline import detect, check, METHODS, safety_layer
 from medguard import NAME2CANON, IN_SCOPE
 import ui
 
@@ -25,8 +25,13 @@ EXAMPLES = {
 }
 SUPPLEMENT_RE = re.compile(r"\b(vitamin\s*[a-z0-9]?\b|fish oil|omega-?3|supplements?|herbal\s*\w*|probiotics?|melatonin|"
                            r"turmeric|ginkgo|st\.? john'?s wort|multivitamins?)", re.I)
-DISCLAIMER = ("Prototype for education only. MedGuard AI does not give medical advice, and its safety rules are a small sample "
-              "that must be checked against their sources. Always talk to a pharmacist or doctor before changing any medication.")
+DISCLAIMER = ("MedGuard AI helps you share an accurate medication list with your doctor or pharmacist. It is not a tool for "
+              "making medication decisions: it does not tell you whether a medication is safe for you, and every flag must be reviewed "
+              "by a doctor or pharmacist. Do not start, stop or change any medication based on this app. "
+              "Student prototype; safety rules are a sample pending verification.")
+POSITIONING = ("A communication bridge between patients and clinicians: it turns the list a patient writes into a clear, "
+               "standardized list so the doctor or pharmacist knows what the patient is actually taking, and flags items "
+               "for the clinician to review.")
 
 @st.cache_data
 def load_results():
@@ -34,7 +39,7 @@ def load_results():
         p = RES / n
         return pd.read_csv(p) if p.exists() else None
     return {"cmp": rd("model_comparison.csv"), "e2e": rd("end_to_end_alerts.csv"),
-            "sealed": rd("sealed_test_1_results.csv"), "speed": rd("speed.csv")}
+            "sealed": rd("sealed_test_1_results.csv"), "sealed2": rd("sealed_test_2_results.csv"), "speed": rd("speed.csv")}
 R = load_results()
 SYN = "Synthetic test (unseen drugs + templates)"
 
@@ -46,6 +51,23 @@ def false_flags(row):
     tp = row.recall * row.n_mentions
     return tp / row.precision - tp if row.precision > 0 else 0
 
+def highlight_original(text, dets):
+    """Patient's own words with recognized names marked: green = recognized, amber = needs confirmation."""
+    marks = {}
+    for d in dets or []:
+        marks[d["token"]] = "rev" if d.get("needs_review", d["similarity"] < 80) else "ok"
+    if not marks:
+        return html.escape(text)
+    pat = re.compile(r"(?<![A-Za-z0-9-])(" + "|".join(re.escape(t) for t in sorted(marks, key=len, reverse=True)) + r")(?![A-Za-z0-9-])")
+    out, last = [], 0
+    for m in pat.finditer(text):
+        out.append(html.escape(text[last:m.start()]))
+        cls = "mg-hl-ok" if marks[m.group(1)] == "ok" else "mg-hl-rev"
+        out.append(f'<mark class="{cls}">{html.escape(m.group(1))}</mark>')
+        last = m.end()
+    out.append(html.escape(text[last:]))
+    return "".join(out).replace("\n", "<br>")
+
 def md(s):
     st.markdown(s, unsafe_allow_html=True)
 
@@ -54,8 +76,9 @@ icons = "".join(ui.icon_svg(c, 44) for c in ["warfarin", "metformin", "gabapenti
 md(f"""<div class="mg-hero"><div style="flex:1">
 <div class="mg-brand" role="heading" aria-level="1">MedGuard <span>AI</span></div>
 <div class="mg-tagline">Safer medications. Smarter decisions.</div>
-<p class="mg-sub">Enter a medication list the way people really write it. MedGuard AI finds each medication, checks it against
-older-adult safety rules, and turns the results into questions to bring to a pharmacist.</p></div>
+<p class="mg-sub">A bridge between patients and their doctors. Patients write down what they take, in their own words; MedGuard AI
+turns it into a clear medication list for the doctor or pharmacist, with items flagged for <b>clinician review</b>.
+It does not make medication decisions for patients.</p></div>
 <div class="mg-hero-icons" aria-hidden="true">{icons}</div></div>""")
 
 tab_check, tab_how, tab_res, tab_biz, tab_rai = st.tabs([
@@ -69,11 +92,11 @@ with tab_check:
     with st.container(key="mgbox_input"):
         c1, c2 = st.columns([3, 2])
         with c1:
-            view = st.radio("Who is using MedGuard?", ["Older adult / family", "Home health nurse"], horizontal=True)
+            view = st.radio("Who is using MedGuard?", ["Patient / family (preparing for a visit)", "Clinician (doctor, pharmacist, nurse)"], horizontal=True)
         with c2:
             with st.expander("Demo settings", icon=":material/tune:"):
                 method = st.selectbox("Recognition method", METHODS, index=0, help="Switch to a baseline to compare live.")
-        nurse = view == "Home health nurse"
+        nurse = view.startswith("Clinician")
 
         st.subheader("1. Enter medications")
         st.caption("Try an example, or type your own list.")
@@ -91,7 +114,10 @@ with tab_check:
             else:
                 st.session_state.pop("empty_warning", None)
                 with st.spinner("Analyzing medications…", show_time=False):
-                    st.session_state["detections"] = detect(text, method)
+                    dets0, unrec, pm_unknown = safety_layer(text, detect(text, method))
+                    st.session_state["detections"] = dets0
+                    st.session_state["unrecognized"] = unrec
+                    st.session_state["pm_unknown"] = pm_unknown
                 st.session_state["supplements"] = sorted({m.group(0).strip().lower() for m in SUPPLEMENT_RE.finditer(text)})
                 st.session_state["source_text"] = text
             st.session_state.pop("report", None)
@@ -120,11 +146,19 @@ with tab_check:
                         status = "checked" if d["canonical"] in IN_SCOPE else "not_assessed"
                         extra = (f'<div class="mg-src" style="margin-top:8px">Match {d["similarity"]:.0f}% · model score {d["model_score"]:.2f}</div>'
                                  if nurse else "")
+                        if d.get("combo"):
+                            extra += f'<div class="mg-src" style="margin-top:8px">Combination product: {html.escape(d["combo"])}</div>'
+                        if d.get("outside_list"):
+                            extra += ('<div class="mg-src" style="margin-top:8px">Known medication, but not in our rule set: it will be listed '
+                                      'as <b>Not assessed</b> for your clinician.'
+                                      + (f' (Not the same as {html.escape(d["lookalike"])}.)' if d.get("lookalike") else "") + '</div>')
                         md(ui.med_card(d["token"], d["canonical"], status, extra))
                         if st.checkbox("Include in safety check", value=True, key=f"det{i}"):
                             confirmed.append(d["canonical"])
                     else:
                         why = "looks like an everyday word" if d.get("common_word") else f"is only a {d['similarity']:.0f}% match"
+                        if d.get("outside_list"):
+                            why += " to a medication outside our rule set"
                         md(ui.med_card(d["token"], None, "review",
                                        f'<div class="mg-src" style="margin-top:8px">“{html.escape(d["token"])}” {why}. '
                                        f'Closest name: {html.escape(d["canonical"])}.</div>'))
@@ -133,16 +167,29 @@ with tab_check:
                             confirmed.append(NAME2CANON.get(fix.strip().lower(), fix.strip().lower()))
             extra = st.multiselect("Add a medication we missed", sorted(NAME2CANON), placeholder="Search medication names")
             confirmed += [NAME2CANON[x] for x in extra]
+            pm_unknown = st.session_state.get("pm_unknown", [])
+            if pm_unknown:
+                md(ui.notice("<b>" + html.escape(", ".join(pm_unknown)) + "</b> may be a combination product. “PM” products usually also "
+                             "contain a sleep aid such as diphenhydramine, which the Beers Criteria advise older adults to avoid. We only "
+                             "recognized part of it: please check the label and add every ingredient below.", "alert", "#B45309", "#FFFBEB"))
+            unrec = st.session_state.get("unrecognized", [])
+            kept_unrec = []
+            if unrec:
+                md(ui.notice("We could not identify: <b>" + html.escape(", ".join(unrec)) + "</b>. If any of these is a medication, "
+                             "it has <b>not</b> been checked. Kept words are listed as <b>Not assessed</b> so your clinician sees them.",
+                             "search", "#B45309", "#FFFBEB"))
+                kept_unrec = st.multiselect("Unrecognized words to list as Not assessed (remove any that are not medications)",
+                                            unrec, default=unrec)
             sups = st.session_state.get("supplements", [])
             if sups:
                 md(ui.notice("Supplements noticed: " + html.escape(", ".join(sups)) +
                              ". They are not in our rule set and will be listed as Not assessed.", "circle-dash", "#4B5563", "#F9FAFB"))
-            if not confirmed:
+            if not confirmed and not kept_unrec:
                 st.caption("Confirm or add at least one medication to see a safety report.")
             elif st.button("Generate safety report", type="primary", icon=":material/shield:"):
                 with st.spinner("Checking interactions and older-adult safety rules…"):
                     alerts, na = check(confirmed)
-                st.session_state["report"] = (alerts, na + sups)
+                st.session_state["report"] = (alerts, na + sups + [f"{w} (unrecognized)" for w in kept_unrec])
                 st.session_state["confirmed"] = sorted(set(confirmed))
 
     rep = st.session_state.get("report")
@@ -151,7 +198,19 @@ with tab_check:
         meds = st.session_state["confirmed"]
         groups = {t: [a for a in alerts if a["type"] == t] for t in ui.ALERT_STYLE}
         with st.container(key="mgbox_report"):
-            st.subheader("3. Safety report")
+            st.subheader("3. Medication summary for your clinician" if not nurse else "3. Medication summary and flags for review")
+            md(ui.notice("<b>For your doctor or pharmacist to review.</b> These flags come from published rules and are "
+                         "<b>not a judgment about your treatment</b>. Your doctor may have good reasons for your current medications. "
+                         "Do not start, stop or change anything on your own.", "shield", ui.ACCENT, "#FEF2F2"))
+            src_text = st.session_state.get("source_text", "")
+            if src_text:
+                md(ui.panel("What the patient wrote, in their own words",
+                            f'<div class="mg-orig">{highlight_original(src_text, st.session_state.get("detections"))}</div>'
+                            '<div class="mg-src" style="margin-top:10px"><mark class="mg-hl-ok">green</mark> = recognized · '
+                            '<mark class="mg-hl-rev">amber</mark> = needed confirmation · <b>anything not highlighted was not recognized.</b> '
+                            'MedGuard AI only knows 101 medications and can miss names it has never seen, abbreviations, or names split by a space. '
+                            'Please read the original text so that no medication is overlooked.</div>',
+                            "file-text", "#4B5563"))
             m1, m2, m3, m4 = st.columns(4)
             m1.metric("Medications checked", len([m for m in meds if m in IN_SCOPE]))
             m2.metric("Interactions", len(groups["Drug interaction"]))
@@ -184,17 +243,20 @@ with tab_check:
             with right:
                 body = "".join(f'<div class="mg-q"><b>{n}.</b><span>{html.escape(q)}</span></div>' for n, q in enumerate(qs, 1)) \
                        or '<div class="mg-q">No questions generated.</div>'
-                md(ui.panel("Questions to bring to your pharmacist", body, "message", ui.ACCENT))
+                md(ui.panel("Questions to ask your doctor or pharmacist", body, "message", ui.ACCENT))
                 today = datetime.date.today().strftime("%b %d, %Y")
                 sheet = f"""<!doctype html><html><head><meta charset="utf-8"><title>MedGuard AI - pharmacist visit sheet</title>
 <style>body{{font-family:Inter,Arial,sans-serif;max-width:760px;margin:30px auto;color:#1F2937}}td,th{{border:1px solid #E5E7EB;padding:8px;text-align:left}}
 table{{border-collapse:collapse;width:100%}}h1{{color:#B91C1C}}.s{{color:#6B7280;font-size:12px}}</style></head><body>
-<h1>Medication list for my pharmacist</h1><p class="s">Prepared with MedGuard AI (student prototype) on {today}. Not medical advice.</p>
-<h2>My medications</h2><table><tr><th>Medication</th><th>Used for</th></tr>{''.join(f'<tr><td>{html.escape(m)}</td><td>{html.escape(ui.info(m)["used_for"])}</td></tr>' for m in meds)}</table>
+<h1>My current medications</h1><p class="s">Prepared by the patient with MedGuard AI (student prototype) on {today}, to share with my doctor or pharmacist.
+This is not medical advice. Flags below are for clinician review only.</p>
+<h2>In my own words</h2><p style="background:#F9FAFB;border:1px solid #E5E7EB;padding:10px;border-radius:8px">{html.escape(st.session_state.get("source_text", "")).replace(chr(10), "<br>")}</p>
+<p class="s">This is exactly what I typed. The list below was generated from it by a computer program and may be missing medications.</p>
+<h2>My medications (as recognized)</h2><table><tr><th>Medication</th><th>Used for</th></tr>{''.join(f'<tr><td>{html.escape(m)}</td><td>{html.escape(ui.info(m)["used_for"])}</td></tr>' for m in meds)}</table>
 <h2>Questions</h2><ol>{''.join(f'<li>{html.escape(q)}</li>' for q in qs)}</ol>
-<h2>Flags found</h2><ul>{''.join(f'<li><b>{html.escape(a["drugs"])}</b>: {html.escape(a["message"])} <span class="s">({html.escape(a["source"])})</span></li>' for a in alerts if a["type"] != "Side effects to watch")}</ul>
+<h2>Flags for clinician review</h2><ul>{''.join(f'<li><b>{html.escape(a["drugs"])}</b>: {html.escape(a["message"])} <span class="s">({html.escape(a["source"])})</span></li>' for a in alerts if a["type"] != "Side effects to watch")}</ul>
 <p class="s">Please do not stop or change any medication without talking to your doctor or pharmacist.</p></body></html>"""
-                st.download_button("Download pharmacist visit sheet", sheet, file_name="medguard_pharmacist_sheet.html",
+                st.download_button("Download list to share with my doctor", sheet, file_name="medguard_medication_list.html",
                                    mime="text/html", width="stretch", icon=":material/download:")
                 if nurse:
                     note = (f"Medication review ({today}). Meds reported: {', '.join(meds)}. "
@@ -202,9 +264,10 @@ table{{border-collapse:collapse;width:100%}}h1{{color:#B91C1C}}.s{{color:#6B7280
                             f"[{'; '.join(a['drugs'] for a in groups['Drug interaction']) or 'none'}], "
                             f"{len(groups['Older-adult caution (Beers)'])} Beers caution(s) "
                             f"[{', '.join(a['drugs'] for a in groups['Older-adult caution (Beers)']) or 'none'}]. "
-                            f"Not assessed: {', '.join(not_assessed) or 'none'}. Plan: send list to prescriber/pharmacist for review.")
+                            f"Not assessed: {', '.join(not_assessed) or 'none'}. "
+                            f"Patient's original text: \"{st.session_state.get('source_text', '').strip()}\". Flags generated by MedGuard AI (decision support) for clinician review; no changes made by patient.")
                     st.text_area("Visit note (copy into your charting system)", note, height=170)
-            md(ui.notice("Bring this list to your pharmacist or doctor. Do not stop or change any medication on your own.",
+            md(ui.notice("Share this list with your doctor or pharmacist at your next visit. Do not start, stop or change any medication on your own.",
                          "shield", ui.ACCENT, "#FEF2F2"))
 
     with st.expander("Medication type colors", icon=":material/palette:"):
@@ -221,7 +284,7 @@ with tab_how:
             ui.step_box(2, "Find medication names", "A trained model decides which words are medication names.", ml=True),
             ui.step_box(3, "Standardize", "Brand and misspelled names are matched to one generic name (Advil → ibuprofen)."),
             ui.step_box(4, "Person confirms", "The user ticks each medication. Unsure matches must be retyped."),
-            ui.step_box(5, "Check & explain", "Cited rules: interactions, Beers Criteria, side effects. Plain-language report."),
+            ui.step_box(5, "Flag for the clinician", "Cited rules flag interactions, Beers cautions and side effects for a doctor or pharmacist to review."),
         ]) + "</div>")
         md(ui.notice("<b>The model only finds names. Every alert comes from a cited rule</b>, so the AI never invents medical advice.",
                      "shield-check", "#047857", "#ECFDF5"))
@@ -288,6 +351,19 @@ with tab_res:
 - On correctly typed text, simple lookup is already enough; the model's value shows up with typos and bottle text.
 - The biggest real gap is **coverage**: 41% of medications people wrote are not in our 101-medication list yet. Loading the full RxNorm list is the next step.
 - Look-alike names (Toradol vs tramadol) can be matched to the wrong drug. We plan a stricter match cutoff, tuned on validation data.""")
+    if R.get("sealed2") is not None:
+        with st.container(key="mgbox_res3"):
+            st.subheader("Team test 2: same sentences rewritten with typos and doses (scored once)")
+            s2 = R["sealed2"][["method", "found_and_mapped_correctly", "misspelled_found_correctly", "precision", "ordinary_word_to_review", "alerts_found", "alerts_expected", "wrong_alerts"]].copy()
+            s2["Alerts found"] = s2.alerts_found.astype(int).astype(str) + " / " + s2.alerts_expected.astype(int).astype(str)
+            s2 = s2.drop(columns=["alerts_found", "alerts_expected"])
+            s2.columns = ["Method", "Known medications found", "Misspelled found (12)", "Precision", "Everyday words flagged", "Wrong alerts", "Alerts found"]
+            for c in ["Known medications found", "Misspelled found (12)", "Precision"]:
+                s2[c] = s2[c].map("{:.1%}".format)
+            st.dataframe(s2, hide_index=True, width="stretch")
+            st.markdown("""**Why the scores are still high:** every misspelling in this set is a single-letter slip (similarity 89% or more),
+which dictionary similarity solves easily, and all 150 sentences follow the same \"I take …\" pattern written inside the team.
+Counting medications outside our list, overall recall is only about 70%. The next test uses 10–20 lists written by people outside the team.""")
 
 # ================================================================== TAB 4: BUSINESS
 with tab_biz:
@@ -295,16 +371,16 @@ with tab_biz:
         st.header("Business case")
         c1, c2, c3 = st.columns(3)
         for col, t, ic, b in [
-            (c1, "The problem", "alert", "Older adults often take many medications from several prescribers. Each prescriber may see only part of the list, so risky combinations can slip through."),
+            (c1, "The problem", "alert", "Older adults often take many medications from several prescribers. Doctors often do not know everything a patient is actually taking, so risky combinations can slip through."),
             (c2, "Why now", "info", "Safety rules exist (AGS Beers Criteria, FDA labels) but are written for clinicians. People write their lists in messy, everyday language."),
-            (c3, "Our answer", "shield-check", "Accept the list as people actually write it, find every medication, and turn cited rules into plain-language questions for the pharmacist."),
+            (c3, "Our answer", "shield-check", "A bridge between patient and clinician: the patient writes the list in their own words; the clinician receives a clear, standardized list with flags to review. Decisions stay with the clinician."),
         ]:
             col.markdown(ui.panel(t, html.escape(b), ic, ui.ACCENT), unsafe_allow_html=True)
         st.subheader("Who uses it, who pays")
         st.dataframe(pd.DataFrame([
-            ["Older adult / family caregiver", "Prepares for a pharmacy or doctor visit", "Free consumer app", "A clear list of what to ask"],
-            ["Home health nurse", "Reviews bottles during a home visit", "Home health agency (per-nurse subscription)", "Faster review, flags to send to the prescriber"],
-            ["Pharmacist", "Receives the visit sheet", "Partner channel", "Better-prepared patients, fewer missed medications"],
+            ["Patient / family caregiver", "Writes down what they take before a visit", "Free", "An easy way to tell the doctor everything they take"],
+            ["Doctor or pharmacist", "Reviews the list and the flags at the visit", "Clinic or pharmacy (hypothesis)", "A complete, standardized list; flags to review; less time reconciling medications"],
+            ["Home health nurse", "Collects the list during a home visit and sends it to the prescriber", "Home health agency (hypothesis)", "Faster medication review; a ready visit note"],
         ], columns=["User", "When they use it", "Who pays (hypothesis)", "What they get"]), hide_index=True, width="stretch")
 
     with st.container(key="mgbox_biz2"):
@@ -348,6 +424,8 @@ with tab_biz:
                         "Existing interaction checkers expect clean drug names typed one at a time and are written for clinicians. "
                         "MedGuard AI accepts messy, whole-list input, focuses on older adults, and ends with questions for a pharmacist "
                         "instead of advice.", "info", ui.ACCENT))
+        st.subheader("Positioning")
+        md(ui.notice("<b>MedGuard AI is decision support for clinicians, not a decision tool for patients.</b> " + html.escape(POSITIONING), "shield-check", "#047857", "#ECFDF5"))
         st.subheader("Our ask")
         st.markdown("One home health agency for a 3-month pilot, and one pharmacist to review every safety rule.")
 
@@ -357,37 +435,39 @@ with tab_rai:
         st.header("Responsible AI")
         c1, c2 = st.columns(2)
         with c1:
-            md(ui.panel("What MedGuard AI does", "Finds medication names, matches them to one standard name, and shows cited "
-                        "safety information in plain language.", "check", "#047857"))
+            md(ui.panel("What MedGuard AI does", "Acts as a bridge between patient and clinician: finds medication names in what the patient "
+                        "wrote, standardizes them, and flags cited safety items <b>for a doctor or pharmacist to review</b>.", "check", "#047857"))
         with c2:
-            md(ui.panel("What it never does", "Recommend starting, stopping or changing a medication or dose; diagnose; or say "
-                        "a combination is safe because no alert appeared.", "x", ui.ACCENT))
+            md(ui.panel("What it never does", "Let a patient make medication decisions on their own; recommend starting, stopping or changing "
+                        "a medication or dose; diagnose; or say a combination is safe because no alert appeared.", "x", ui.ACCENT))
     with st.container(key="mgbox_rai2"):
         st.subheader("Guardrails built into the app")
-        st.dataframe(pd.DataFrame([
-            ["Person confirms every medication", "Nothing is checked until the user ticks it"],
+        st.table(pd.DataFrame([
+            ["Person confirms every medication", "Nothing is checked until the user ticks it (human-in-the-loop, Week 5)"],
+            ["Clinician makes every decision", "Flags are labeled for doctor or pharmacist review; the app never tells a patient what to do"],
             ["Unsure matches are never guessed", "Matches below 80% and everyday words (e.g., “diabetes”) must be confirmed or retyped"],
             ["“Not assessed” instead of silence", "Medications and supplements outside the rule set are listed, never shown as safe"],
             ["Descriptions are caught", "“my water pill” prompts the user to add the name on the bottle"],
             ["Every alert has a source", "Beers Criteria 2023 or the FDA label section it came from"],
             ["Severity is labeled, not just colored", "Each alert shows a text label and icon shape, so it is readable without color"],
             ["Icons are illustrations", "They show the medication type, not the pill's real look, so no one identifies a pill by sight"],
-        ], columns=["Guardrail", "How it works"]), hide_index=True, width="stretch")
+        ], columns=["Guardrail", "How it works"]).set_index("Guardrail"))
         st.subheader("Failure modes we found in testing")
-        st.dataframe(pd.DataFrame([
+        st.table(pd.DataFrame([
             ["Look-alike names", "Toradol → tramadol, Lovastatin → atorvastatin (team test)", "Full RxNorm list; stricter cutoff"],
             ["Medication not in our list", "41% of names in the team test (e.g., Paxlovid, Sudafed)", "Full RxNorm list; show as Not assessed"],
             ["Description instead of name", "“my water pill”", "Prompt for the bottle name"],
             ["Heavily garbled bottle text", "“bcrtim” (Bactrim)", "Sent to user review"],
-        ], columns=["Failure", "Example", "Mitigation"]), hide_index=True, width="stretch")
+        ], columns=["Failure", "Example", "Mitigation"]).set_index("Failure"))
     with st.container(key="mgbox_rai3"):
         st.subheader("Model card (summary)")
-        st.dataframe(pd.DataFrame([
-            ["Intended use", "Support medication reviews by older adults, caregivers and home health nurses"],
-            ["Not intended for", "Diagnosis, dosing, or replacing a pharmacist or doctor"],
+        st.table(pd.DataFrame([
+            ["Intended use", "Decision support for clinicians. Helps patients and caregivers share an accurate medication list with their doctor or pharmacist, and flags items for clinician review."],
+            ["Required human check", "Every flag must be reviewed by a pharmacist or clinician before any action. The patient confirms the list; the clinician makes all decisions."],
+            ["Not intended for", "Patients making medication decisions on their own; diagnosis; dosing; replacing a pharmacist or doctor"],
             ["Model", "Logistic regression on character patterns + dictionary similarity; threshold set by cost (miss = 10× false flag)"],
             ["Training data", "Synthetic sentences; split by drug, template and word to prevent leakage"],
-            ["Evaluation", "Synthetic test, hand-written set, 150-sentence team test scored once, 30-list end-to-end alert test"],
+            ["Evaluation", "Synthetic test, hand-written set, two 150-sentence team tests (each scored once), 30-list end-to-end alert test. Next: 10–20 lists written by people outside the team"],
             ["Known limits", "English only; 101-medication list; rules pending pharmacist verification; single-word names"],
             ["Privacy", "No real patient data; nothing is stored after the session"],
-        ], columns=["Item", "Details"]), hide_index=True, width="stretch")
+        ], columns=["Item", "Details"]).set_index("Item"))

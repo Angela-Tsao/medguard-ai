@@ -1,0 +1,24 @@
+sentence,token,mapped_to,similarity,kind
+40,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+111,sertra-leen,,,dictionary drug missed
+114,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+140,amlo-di-peen,,,dictionary drug missed
+141,sertra-leen,,,dictionary drug missed
+219,sertra-leen,,,dictionary drug missed
+221,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+225,amlo-di-peen,,,dictionary drug missed
+256,iboo-profen,,,dictionary drug missed
+273,amlo-di-peen,,,dictionary drug missed
+285,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+288,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+289,sertra-leen,,,dictionary drug missed
+326,amlo-di-peen,,,dictionary drug missed
+338,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+342,sertra-leen,,,dictionary drug missed
+357,sertra-leen,,,dictionary drug missed
+371,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+410,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+429,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+433,azilsartan,valsartan,84.21052631578947,OOV drug auto-mapped to a different drug
+471,amlo-di-peen,,,dictionary drug missed
+484,sertra-leen,,,dictionary drug missed

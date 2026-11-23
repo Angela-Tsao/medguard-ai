@@ -30,10 +30,12 @@ def label_tokens(toks, gold):
             lab[i] = "NEU"
     used = set()
     for m in gold:
+        surf, _, canon = m.partition("|")          # "surface|canonical" marks a labelled misspelling
         for i, t in enumerate(toks):
-            if i not in used and t.lower() == m.lower():
+            if i not in used and t.lower() == surf.lower():
                 used.add(i)
-                lab[i] = ("IN", NAME2CANON[m.lower()]) if m.lower() in NAME2CANON else ("OOV", m)
+                c = canon or NAME2CANON.get(surf.lower())
+                lab[i] = ("IN", c, bool(canon)) if c and c != "OOV" else ("OOV", surf)
                 break
     return lab
 
@@ -70,7 +72,7 @@ for name, (fn, thr) in METHODS.items():
         flags = fn(toks) >= thr
         c = dict(in_total=0, in_auto_ok=0, in_review=0, in_wrong=0, in_missed=0,
                  oov_total=0, oov_auto_wrong=0, oov_review=0, oov_missed=0,
-                 o_flag_auto=0, o_flag_review=0, med_flags=0, all_flags=0)
+                 o_flag_auto=0, o_flag_review=0, med_flags=0, all_flags=0, typo_total=0, typo_ok=0)
         pred_meds, gold_meds = [], [l[1] for l in lab if isinstance(l, tuple) and l[0] == "IN"]
         for i, (t, l) in enumerate(zip(toks, lab)):
             flagged = bool(flags[i])
@@ -85,6 +87,9 @@ for name, (fn, thr) in METHODS.items():
                     pred_meds.append(canon)
             if isinstance(l, tuple) and l[0] == "IN":
                 c["in_total"] += 1
+                if len(l) > 2 and l[2]:
+                    c["typo_total"] += 1
+                    if flagged and not review and canon == l[1]: c["typo_ok"] += 1
                 if not flagged: c["in_missed"] += 1
                 else:
                     c["med_flags"] += 1
@@ -126,7 +131,8 @@ for name, (fn, thr) in METHODS.items():
     rec, det_rec, prec = stats(df)
     rows.append({"method": name, "in_dict_mentions": int(tot.in_total),
                  "found_and_mapped_correctly": rec, "fm_lo": lo[0], "fm_hi": hi[0],
-                 "found_any": det_rec, "sent_to_review": int(tot.in_review), "mapped_wrong": int(tot.in_wrong), "missed": int(tot.in_missed),
+                 "found_any": det_rec, "misspelled_mentions": int(tot.typo_total),
+                 "misspelled_found_correctly": (tot.typo_ok / tot.typo_total) if tot.typo_total else float("nan"), "sent_to_review": int(tot.in_review), "mapped_wrong": int(tot.in_wrong), "missed": int(tot.in_missed),
                  "precision": prec, "prec_lo": lo[2], "prec_hi": hi[2],
                  "ordinary_word_auto_mapped": int(tot.o_flag_auto), "ordinary_word_to_review": int(tot.o_flag_review),
                  "oov_mentions": int(tot.oov_total), "oov_auto_mapped_wrong": int(tot.oov_auto_wrong),

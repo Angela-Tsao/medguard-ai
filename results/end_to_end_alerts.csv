@@ -1,7 +1,7 @@
 method,setting,lists,gold_alerts,alert_recall,missed_alerts,false_alerts
-Logistic regression,auto-confirm,30,223,1.0,0,0
-Logistic regression,weak matches and everyday words sent to user review,30,223,0.9910313901345291,2,0
-Fuzzy match (baseline),auto-confirm,30,223,1.0,0,11
-Fuzzy match (baseline),weak matches and everyday words sent to user review,30,223,0.9910313901345291,2,0
-Exact match (baseline),auto-confirm,30,223,0.5650224215246636,97,2
-Exact match (baseline),weak matches and everyday words sent to user review,30,223,0.5650224215246636,97,2
+Logistic regression,auto-confirm,30,225,1.0,0,0
+Logistic regression,weak matches and everyday words sent to user review,30,225,0.9866666666666667,3,0
+Fuzzy match (baseline),auto-confirm,30,225,1.0,0,11
+Fuzzy match (baseline),weak matches and everyday words sent to user review,30,225,0.9866666666666667,3,0
+Exact match (baseline),auto-confirm,30,225,0.56,99,2
+Exact match (baseline),weak matches and everyday words sent to user review,30,225,0.56,99,2
